@@ -16,5 +16,22 @@ namespace HMSProject.Forms
         {
             InitializeComponent();
         }
+
+        private void panelUpdateUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RoleManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Form LogoutForm = new LoginForm();
+            LogoutForm.Show();
+            this.Close();
+        }
     }
 }

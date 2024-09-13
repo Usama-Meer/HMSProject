@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace HMSProject.Forms
 {
-    public partial class AppointmentManagement : Form
+    public partial class ReceiptionistManagement : Form
     {
-        public AppointmentManagement()
+        public ReceiptionistManagement()
         {
             InitializeComponent();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

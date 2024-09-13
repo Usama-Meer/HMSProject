@@ -50,22 +50,25 @@ namespace HMSProject.Forms
                 switch (roleName)
                 {
                     case "Admin":
-                        formToOpen = new UserDashboard();
+                        formToOpen = new UserDashboard(user.Id,_context);
+                        
+                        
                         break;
                     case "Doctor":
-                        formToOpen = new UserDashboard();
+                        formToOpen = new UserDashboard(user.Id, _context);
                         break;
                     case "Patient":
-                        formToOpen = new UserDashboard();
+                        formToOpen = new UserDashboard(user.Id, _context);
                         break;
                     case "Receiptionist":
-                        formToOpen = new UserDashboard();
+                        formToOpen = new UserDashboard(user.Id, _context);
                         break;
                     default:
                         MessageBox.Show("Role not recognized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
                 }
                 formToOpen.Show();
                 this.Hide();
+
             }
 
             else

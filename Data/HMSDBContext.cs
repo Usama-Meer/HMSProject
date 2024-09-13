@@ -24,7 +24,7 @@ namespace HMSProject.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-5T1856K9\\SQLEXPRESS;Database=HMSDatabase;Trusted_Connection=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-PADUH07\\MSSQLSERVER01;Database=HMSDatabase;Trusted_Connection=True;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

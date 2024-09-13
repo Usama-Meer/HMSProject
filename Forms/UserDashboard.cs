@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMSProject.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,20 @@ namespace HMSProject.Forms
 {
     public partial class UserDashboard : Form
     {
-        public UserDashboard()
+        public int userId;
+        private HMSDBContext _context;
+        public UserDashboard(int userId, HMSDBContext context)
         {
             InitializeComponent();
+            this.userId = userId;
+            this._context = context;
+
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
+            _context.SaveChanges();
+            _context.Dispose();
             Form LogoutForm = new LoginForm();
             LogoutForm.Show();
             this.Close();
@@ -26,13 +34,22 @@ namespace HMSProject.Forms
 
         private void UserManagment_Click(object sender, EventArgs e)
         {
-            Form userManagementForm = new UserManagement();
+            Form userManagementForm = new UserManagement(userId, _context);
             userManagementForm.Show();
             this.Hide();
         }
 
-        private void DoctoManagemet_Click(object sender, EventArgs e)
+        private void UserDashboard_Load(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void DoctorManagemet_Click(object sender, EventArgs e)
+        {
+            Form form = new DoctorManagement(userId, _context);
+            form.Show();
+            this.Hide();
 
         }
     }

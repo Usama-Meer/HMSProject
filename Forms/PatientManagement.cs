@@ -16,5 +16,27 @@ namespace HMSProject.Forms
         {
             InitializeComponent();
         }
+
+        private void buttonSearchPatient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PatientManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPnlUpdateRoleName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            Form LogoutForm = new LoginForm();
+            LogoutForm.Show();
+            this.Close();
+        }
     }
 }
