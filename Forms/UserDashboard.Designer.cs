@@ -36,26 +36,24 @@
             buttonAppointmentManagement = new Button();
             buttonRoleManagement = new Button();
             buttonLogout = new Button();
-            labelUserEmail = new Label();
+            loggedUserEmail = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(348, 61);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(278, 49);
             label1.Name = "label1";
-            label1.Size = new Size(215, 38);
+            label1.Size = new Size(183, 32);
             label1.TabIndex = 0;
             label1.Text = "User Dashboard";
             // 
             // buttonUserManagement
             // 
-            buttonUserManagement.Location = new Point(326, 150);
-            buttonUserManagement.Margin = new Padding(4);
+            buttonUserManagement.Location = new Point(261, 120);
             buttonUserManagement.Name = "buttonUserManagement";
-            buttonUserManagement.Size = new Size(284, 36);
+            buttonUserManagement.Size = new Size(227, 29);
             buttonUserManagement.TabIndex = 1;
             buttonUserManagement.Text = "User Management";
             buttonUserManagement.UseVisualStyleBackColor = true;
@@ -63,10 +61,9 @@
             // 
             // buttonDoctorManagement
             // 
-            buttonDoctorManagement.Location = new Point(326, 194);
-            buttonDoctorManagement.Margin = new Padding(4);
+            buttonDoctorManagement.Location = new Point(261, 155);
             buttonDoctorManagement.Name = "buttonDoctorManagement";
-            buttonDoctorManagement.Size = new Size(284, 36);
+            buttonDoctorManagement.Size = new Size(227, 29);
             buttonDoctorManagement.TabIndex = 2;
             buttonDoctorManagement.Text = "Doctor Management";
             buttonDoctorManagement.UseVisualStyleBackColor = true;
@@ -74,71 +71,69 @@
             // 
             // buttonPatientManagement
             // 
-            buttonPatientManagement.Location = new Point(326, 238);
-            buttonPatientManagement.Margin = new Padding(4);
+            buttonPatientManagement.Location = new Point(261, 190);
             buttonPatientManagement.Name = "buttonPatientManagement";
-            buttonPatientManagement.Size = new Size(284, 36);
+            buttonPatientManagement.Size = new Size(227, 29);
             buttonPatientManagement.TabIndex = 3;
             buttonPatientManagement.Text = "Patient Management";
             buttonPatientManagement.UseVisualStyleBackColor = true;
+            buttonPatientManagement.Click += PatientManagement_Click;
             // 
             // buttonReceiptionistManagement
             // 
-            buttonReceiptionistManagement.Location = new Point(326, 281);
-            buttonReceiptionistManagement.Margin = new Padding(4);
+            buttonReceiptionistManagement.Location = new Point(261, 225);
             buttonReceiptionistManagement.Name = "buttonReceiptionistManagement";
-            buttonReceiptionistManagement.Size = new Size(284, 36);
+            buttonReceiptionistManagement.Size = new Size(227, 29);
             buttonReceiptionistManagement.TabIndex = 4;
             buttonReceiptionistManagement.Text = "Receiptionist Management";
             buttonReceiptionistManagement.UseVisualStyleBackColor = true;
+            buttonReceiptionistManagement.Click += ReceptionistManagement_Click;
             // 
             // buttonAppointmentManagement
             // 
-            buttonAppointmentManagement.Location = new Point(326, 325);
-            buttonAppointmentManagement.Margin = new Padding(4);
+            buttonAppointmentManagement.Location = new Point(261, 260);
             buttonAppointmentManagement.Name = "buttonAppointmentManagement";
-            buttonAppointmentManagement.Size = new Size(284, 36);
+            buttonAppointmentManagement.Size = new Size(227, 29);
             buttonAppointmentManagement.TabIndex = 5;
             buttonAppointmentManagement.Text = "Appointment Management";
             buttonAppointmentManagement.UseVisualStyleBackColor = true;
+            buttonAppointmentManagement.Click += AppointmentManagemement_Click;
             // 
             // buttonRoleManagement
             // 
-            buttonRoleManagement.Location = new Point(326, 369);
-            buttonRoleManagement.Margin = new Padding(4);
+            buttonRoleManagement.Location = new Point(261, 295);
             buttonRoleManagement.Name = "buttonRoleManagement";
-            buttonRoleManagement.Size = new Size(284, 36);
+            buttonRoleManagement.Size = new Size(227, 29);
             buttonRoleManagement.TabIndex = 6;
             buttonRoleManagement.Text = "Role Management";
             buttonRoleManagement.UseVisualStyleBackColor = true;
+            buttonRoleManagement.Click += RoleManagement_Click;
             // 
             // buttonLogout
             // 
-            buttonLogout.Location = new Point(849, 31);
-            buttonLogout.Margin = new Padding(4);
+            buttonLogout.Location = new Point(679, 25);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(118, 36);
+            buttonLogout.Size = new Size(94, 29);
             buttonLogout.TabIndex = 7;
             buttonLogout.Text = "Logout";
             buttonLogout.UseVisualStyleBackColor = true;
             buttonLogout.Click += Logout_Click;
             // 
-            // labelUserEmail
+            // loggedUserEmail
             // 
-            labelUserEmail.AutoSize = true;
-            labelUserEmail.Location = new Point(730, 36);
-            labelUserEmail.Margin = new Padding(4, 0, 4, 0);
-            labelUserEmail.Name = "labelUserEmail";
-            labelUserEmail.Size = new Size(104, 25);
-            labelUserEmail.TabIndex = 8;
-            labelUserEmail.Text = "{User Email}";
+            loggedUserEmail.AutoSize = true;
+            loggedUserEmail.Location = new Point(584, 29);
+            loggedUserEmail.Name = "loggedUserEmail";
+            loggedUserEmail.Size = new Size(89, 20);
+            loggedUserEmail.TabIndex = 8;
+            loggedUserEmail.Text = "{User Email}";
             // 
             // UserDashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
-            Controls.Add(labelUserEmail);
+            ClientSize = new Size(800, 450);
+            Controls.Add(loggedUserEmail);
             Controls.Add(buttonLogout);
             Controls.Add(buttonRoleManagement);
             Controls.Add(buttonAppointmentManagement);
@@ -147,7 +142,6 @@
             Controls.Add(buttonDoctorManagement);
             Controls.Add(buttonUserManagement);
             Controls.Add(label1);
-            Margin = new Padding(4);
             Name = "UserDashboard";
             Text = "UserDashboard";
             Load += UserDashboard_Load;
@@ -165,6 +159,6 @@
         private Button buttonAppointmentManagement;
         private Button buttonRoleManagement;
         private Button buttonLogout;
-        private Label labelUserEmail;
+        private Label loggedUserEmail;
     }
 }

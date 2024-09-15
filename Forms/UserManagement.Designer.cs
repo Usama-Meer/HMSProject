@@ -34,33 +34,31 @@
             buttonEditUser = new Button();
             buttonDeleteUser = new Button();
             buttonAddUser = new Button();
-            dataGridViewUser = new DataGridView();
             buttonUserList = new Button();
             panelUpdateUser = new Panel();
+            comboBoxUpdateRoleName = new ComboBox();
             label2 = new Label();
             buttonPnlEditCancel = new Button();
             buttonPnlUpdate = new Button();
-            textBoxPnlUpdateRoleId = new TextBox();
             textBoxPnlUpdatePassword = new TextBox();
             textBoxPnlUpdateEmail = new TextBox();
             ord = new Label();
-            labelPnlUpdateRoleId = new Label();
+            labelPnlUpdateRoleName = new Label();
             labelPnlUpdateEmail = new Label();
             panelAddUser = new Panel();
+            comboBoxAddRoleName = new ComboBox();
             label3 = new Label();
             buttonPnlAddCancel = new Button();
             buttonPnlCreateUser = new Button();
-            textBoxPnlAddRoleId = new TextBox();
             textBoxPnlAddPassword = new TextBox();
             TextBoxPnlAddEmail = new TextBox();
             labelPnlAddPassword = new Label();
             labelPnlAddRoleId = new Label();
             labelPnlAddEmail = new Label();
-            RoleName = new DataGridViewTextBoxColumn();
-            RoleDesciption = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).BeginInit();
+            dataGridViewUser = new DataGridView();
             panelUpdateUser.SuspendLayout();
             panelAddUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -125,17 +123,6 @@
             buttonAddUser.UseVisualStyleBackColor = true;
             buttonAddUser.Click += btnAddUser_Click;
             // 
-            // dataGridViewUser
-            // 
-            dataGridViewUser.AllowUserToOrderColumns = true;
-            dataGridViewUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUser.Columns.AddRange(new DataGridViewColumn[] { RoleName, RoleDesciption });
-            dataGridViewUser.Location = new Point(172, 116);
-            dataGridViewUser.Name = "dataGridViewUser";
-            dataGridViewUser.RowHeadersWidth = 51;
-            dataGridViewUser.Size = new Size(559, 258);
-            dataGridViewUser.TabIndex = 21;
-            // 
             // buttonUserList
             // 
             buttonUserList.Location = new Point(22, 134);
@@ -145,25 +132,33 @@
             buttonUserList.TabIndex = 20;
             buttonUserList.Text = "User List";
             buttonUserList.UseVisualStyleBackColor = true;
-            buttonUserList.Click += UserList_Click;
+            buttonUserList.Click += UserManagement_Load;
             // 
             // panelUpdateUser
             // 
+            panelUpdateUser.Controls.Add(comboBoxUpdateRoleName);
             panelUpdateUser.Controls.Add(label2);
             panelUpdateUser.Controls.Add(buttonPnlEditCancel);
             panelUpdateUser.Controls.Add(buttonPnlUpdate);
-            panelUpdateUser.Controls.Add(textBoxPnlUpdateRoleId);
             panelUpdateUser.Controls.Add(textBoxPnlUpdatePassword);
             panelUpdateUser.Controls.Add(textBoxPnlUpdateEmail);
             panelUpdateUser.Controls.Add(ord);
-            panelUpdateUser.Controls.Add(labelPnlUpdateRoleId);
+            panelUpdateUser.Controls.Add(labelPnlUpdateRoleName);
             panelUpdateUser.Controls.Add(labelPnlUpdateEmail);
-            panelUpdateUser.Location = new Point(149, 213);
+            panelUpdateUser.Location = new Point(172, 116);
             panelUpdateUser.Margin = new Padding(2);
             panelUpdateUser.Name = "panelUpdateUser";
-            panelUpdateUser.Size = new Size(562, 260);
+            panelUpdateUser.Size = new Size(562, 257);
             panelUpdateUser.TabIndex = 23;
             panelUpdateUser.Visible = false;
+            // 
+            // comboBoxUpdateRoleName
+            // 
+            comboBoxUpdateRoleName.FormattingEnabled = true;
+            comboBoxUpdateRoleName.Location = new Point(213, 158);
+            comboBoxUpdateRoleName.Name = "comboBoxUpdateRoleName";
+            comboBoxUpdateRoleName.Size = new Size(225, 28);
+            comboBoxUpdateRoleName.TabIndex = 15;
             // 
             // label2
             // 
@@ -185,6 +180,7 @@
             buttonPnlEditCancel.TabIndex = 13;
             buttonPnlEditCancel.Text = "Cancel";
             buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            buttonPnlEditCancel.Click += UserManagement_Load;
             // 
             // buttonPnlUpdate
             // 
@@ -195,14 +191,7 @@
             buttonPnlUpdate.TabIndex = 12;
             buttonPnlUpdate.Text = "Update";
             buttonPnlUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPnlUpdateRoleId
-            // 
-            textBoxPnlUpdateRoleId.Location = new Point(212, 158);
-            textBoxPnlUpdateRoleId.Margin = new Padding(2);
-            textBoxPnlUpdateRoleId.Name = "textBoxPnlUpdateRoleId";
-            textBoxPnlUpdateRoleId.Size = new Size(220, 27);
-            textBoxPnlUpdateRoleId.TabIndex = 11;
+            buttonPnlUpdate.Click += buttonPnlUpdateUser_Click;
             // 
             // textBoxPnlUpdatePassword
             // 
@@ -223,27 +212,27 @@
             // ord
             // 
             ord.AutoSize = true;
-            ord.Location = new Point(134, 111);
+            ord.Location = new Point(127, 111);
             ord.Margin = new Padding(2, 0, 2, 0);
             ord.Name = "ord";
             ord.Size = new Size(70, 20);
             ord.TabIndex = 3;
             ord.Text = "Password";
             // 
-            // labelPnlUpdateRoleId
+            // labelPnlUpdateRoleName
             // 
-            labelPnlUpdateRoleId.AutoSize = true;
-            labelPnlUpdateRoleId.Location = new Point(134, 164);
-            labelPnlUpdateRoleId.Margin = new Padding(2, 0, 2, 0);
-            labelPnlUpdateRoleId.Name = "labelPnlUpdateRoleId";
-            labelPnlUpdateRoleId.Size = new Size(56, 20);
-            labelPnlUpdateRoleId.TabIndex = 1;
-            labelPnlUpdateRoleId.Text = "Role Id";
+            labelPnlUpdateRoleName.AutoSize = true;
+            labelPnlUpdateRoleName.Location = new Point(127, 164);
+            labelPnlUpdateRoleName.Margin = new Padding(2, 0, 2, 0);
+            labelPnlUpdateRoleName.Name = "labelPnlUpdateRoleName";
+            labelPnlUpdateRoleName.Size = new Size(83, 20);
+            labelPnlUpdateRoleName.TabIndex = 1;
+            labelPnlUpdateRoleName.Text = "Role Name";
             // 
             // labelPnlUpdateEmail
             // 
             labelPnlUpdateEmail.AutoSize = true;
-            labelPnlUpdateEmail.Location = new Point(133, 62);
+            labelPnlUpdateEmail.Location = new Point(125, 62);
             labelPnlUpdateEmail.Margin = new Padding(2, 0, 2, 0);
             labelPnlUpdateEmail.Name = "labelPnlUpdateEmail";
             labelPnlUpdateEmail.Size = new Size(46, 20);
@@ -252,21 +241,29 @@
             // 
             // panelAddUser
             // 
+            panelAddUser.Controls.Add(comboBoxAddRoleName);
             panelAddUser.Controls.Add(label3);
             panelAddUser.Controls.Add(buttonPnlAddCancel);
             panelAddUser.Controls.Add(buttonPnlCreateUser);
-            panelAddUser.Controls.Add(textBoxPnlAddRoleId);
             panelAddUser.Controls.Add(textBoxPnlAddPassword);
             panelAddUser.Controls.Add(TextBoxPnlAddEmail);
             panelAddUser.Controls.Add(labelPnlAddPassword);
             panelAddUser.Controls.Add(labelPnlAddRoleId);
             panelAddUser.Controls.Add(labelPnlAddEmail);
-            panelAddUser.Location = new Point(150, 213);
+            panelAddUser.Location = new Point(172, 116);
             panelAddUser.Margin = new Padding(2);
             panelAddUser.Name = "panelAddUser";
             panelAddUser.Size = new Size(559, 258);
             panelAddUser.TabIndex = 22;
             panelAddUser.Visible = false;
+            // 
+            // comboBoxAddRoleName
+            // 
+            comboBoxAddRoleName.FormattingEnabled = true;
+            comboBoxAddRoleName.Location = new Point(212, 161);
+            comboBoxAddRoleName.Name = "comboBoxAddRoleName";
+            comboBoxAddRoleName.Size = new Size(225, 28);
+            comboBoxAddRoleName.TabIndex = 16;
             // 
             // label3
             // 
@@ -288,6 +285,7 @@
             buttonPnlAddCancel.TabIndex = 13;
             buttonPnlAddCancel.Text = "Cancel";
             buttonPnlAddCancel.UseVisualStyleBackColor = true;
+            buttonPnlAddCancel.Click += UserManagement_Load;
             // 
             // buttonPnlCreateUser
             // 
@@ -298,14 +296,7 @@
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPnlAddRoleId
-            // 
-            textBoxPnlAddRoleId.Location = new Point(212, 158);
-            textBoxPnlAddRoleId.Margin = new Padding(2);
-            textBoxPnlAddRoleId.Name = "textBoxPnlAddRoleId";
-            textBoxPnlAddRoleId.Size = new Size(220, 27);
-            textBoxPnlAddRoleId.TabIndex = 11;
+            buttonPnlCreateUser.Click += buttonPnlCreateUser_Click;
             // 
             // textBoxPnlAddPassword
             // 
@@ -326,7 +317,7 @@
             // labelPnlAddPassword
             // 
             labelPnlAddPassword.AutoSize = true;
-            labelPnlAddPassword.Location = new Point(134, 111);
+            labelPnlAddPassword.Location = new Point(127, 111);
             labelPnlAddPassword.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddPassword.Name = "labelPnlAddPassword";
             labelPnlAddPassword.Size = new Size(70, 20);
@@ -336,36 +327,32 @@
             // labelPnlAddRoleId
             // 
             labelPnlAddRoleId.AutoSize = true;
-            labelPnlAddRoleId.Location = new Point(134, 164);
+            labelPnlAddRoleId.Location = new Point(127, 164);
             labelPnlAddRoleId.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddRoleId.Name = "labelPnlAddRoleId";
-            labelPnlAddRoleId.Size = new Size(56, 20);
+            labelPnlAddRoleId.Size = new Size(83, 20);
             labelPnlAddRoleId.TabIndex = 1;
-            labelPnlAddRoleId.Text = "Role Id";
+            labelPnlAddRoleId.Text = "Role Name";
             // 
             // labelPnlAddEmail
             // 
             labelPnlAddEmail.AutoSize = true;
-            labelPnlAddEmail.Location = new Point(133, 62);
+            labelPnlAddEmail.Location = new Point(127, 64);
             labelPnlAddEmail.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddEmail.Name = "labelPnlAddEmail";
             labelPnlAddEmail.Size = new Size(46, 20);
             labelPnlAddEmail.TabIndex = 0;
             labelPnlAddEmail.Text = "Email";
             // 
-            // RoleName
+            // dataGridViewUser
             // 
-            RoleName.HeaderText = "Role Name";
-            RoleName.MinimumWidth = 6;
-            RoleName.Name = "RoleName";
-            RoleName.Width = 125;
-            // 
-            // RoleDesciption
-            // 
-            RoleDesciption.HeaderText = "Role Description";
-            RoleDesciption.MinimumWidth = 6;
-            RoleDesciption.Name = "RoleDesciption";
-            RoleDesciption.Width = 125;
+            dataGridViewUser.AllowUserToOrderColumns = true;
+            dataGridViewUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUser.Location = new Point(172, 116);
+            dataGridViewUser.Name = "dataGridViewUser";
+            dataGridViewUser.RowHeadersWidth = 51;
+            dataGridViewUser.Size = new Size(559, 258);
+            dataGridViewUser.TabIndex = 21;
             // 
             // UserManagement
             // 
@@ -385,11 +372,11 @@
             Name = "UserManagement";
             Text = "UserManagement";
             Load += UserManagement_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).EndInit();
             panelUpdateUser.ResumeLayout(false);
             panelUpdateUser.PerformLayout();
             panelAddUser.ResumeLayout(false);
             panelAddUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -403,7 +390,6 @@
         private Button buttonDeleteUser;
         private Button buttonAddUser;
         private Button buttonUserList;
-        private DataGridView dataGridViewUser;
         private Panel panelUpdateUser;
         private Label label2;
         private Button buttonPnlEditCancel;
@@ -412,19 +398,19 @@
         private TextBox textBoxPnlUpdatePassword;
         private TextBox textBoxPnlUpdateEmail;
         private Label ord;
-        private Label labelPnlUpdateRoleId;
+        private Label labelPnlUpdateRoleName;
         private Label labelPnlUpdateEmail;
         private Panel panelAddUser;
         private Label label3;
         private Button buttonPnlAddCancel;
         private Button buttonPnlCreateUser;
-        private TextBox textBoxPnlAddRoleId;
         private TextBox textBoxPnlAddPassword;
         private TextBox TextBoxPnlAddEmail;
         private Label labelPnlAddPassword;
         private Label labelPnlAddRoleId;
         private Label labelPnlAddEmail;
-        private DataGridViewTextBoxColumn RoleName;
-        private DataGridViewTextBoxColumn RoleDesciption;
+        private DataGridView dataGridViewUser;
+        private ComboBox comboBoxUpdateRoleName;
+        private ComboBox comboBoxAddRoleName;
     }
 }

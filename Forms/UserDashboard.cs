@@ -41,6 +41,8 @@ namespace HMSProject.Forms
 
         private void UserDashboard_Load(object sender, EventArgs e)
         {
+            loggedUserEmail.Text = _context.Users.Find(userId).Email;
+
 
 
         }
@@ -50,6 +52,26 @@ namespace HMSProject.Forms
             Form form = new DoctorManagement(userId, _context);
             form.Show();
             this.Hide();
+
+        }
+
+        private void RoleManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PatientManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReceptionistManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AppointmentManagemement_Click(object sender, EventArgs e)
+        {
 
         }
     }
