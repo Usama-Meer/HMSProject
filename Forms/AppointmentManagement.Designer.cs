@@ -33,8 +33,24 @@
             buttonLogout = new Button();
             label1 = new Label();
             panelAddAppointment = new Panel();
+            label5 = new Label();
+            comboBoxPnlAddDName = new ComboBox();
+            dateTimePickerPnlAdd = new DateTimePicker();
+            label7 = new Label();
+            textBoxPnlAddEmail = new TextBox();
+            textBoxPnlAddPName = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            buttonPnlAddCancel = new Button();
+            buttonPnlCreateUser = new Button();
             label3 = new Label();
             panelUpdateAppoint = new Panel();
+            label6 = new Label();
+            comboBoxPnlUpdateDName = new ComboBox();
+            comboBoxPnlUpdateStatus = new ComboBox();
+            dateTimePickerPnlUpdate = new DateTimePicker();
+            labelPnlAddDate = new Label();
+            label4 = new Label();
             label2 = new Label();
             buttonPnlEditCancel = new Button();
             buttonPnlUpdate = new Button();
@@ -42,48 +58,34 @@
             textBoxPnlUpdateName = new TextBox();
             labelPnlUpdateAppointEmail = new Label();
             labelPnlUpdateReceptName = new Label();
-            buttonPnlAddCancel = new Button();
-            buttonPnlCreateUser = new Button();
             buttonAppointmentList = new Button();
             buttonEditAppointment = new Button();
             buttonDeleteAppointment = new Button();
             buttonAddAppointment = new Button();
-            label4 = new Label();
-            labelPnlAddDate = new Label();
-            dateTimePickerPnlUpdate = new DateTimePicker();
             doctorBindingSource = new BindingSource(components);
-            comboBoxPnlUpdateStatus = new ComboBox();
-            this.textBoxtextBoxPnlAddEmail = new TextBox();
-            textBoxPnlAddPName = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
-            label6 = new Label();
-            comboBoxPnlUpdateDName = new ComboBox();
-            label5 = new Label();
-            comboBoxPnlAddDName = new ComboBox();
-            dateTimePickerPnlAdd = new DateTimePicker();
-            label7 = new Label();
+            panelAppointmentList = new Panel();
+            dataGridViewAppointment = new DataGridView();
             panelAddAppointment.SuspendLayout();
             panelUpdateAppoint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
+            panelAppointmentList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAppointment).BeginInit();
             SuspendLayout();
             // 
             // loggedUserEmail
             // 
             loggedUserEmail.AutoSize = true;
-            loggedUserEmail.Location = new Point(704, 36);
-            loggedUserEmail.Margin = new Padding(4, 0, 4, 0);
+            loggedUserEmail.Location = new Point(563, 29);
             loggedUserEmail.Name = "loggedUserEmail";
-            loggedUserEmail.Size = new Size(104, 25);
+            loggedUserEmail.Size = new Size(89, 20);
             loggedUserEmail.TabIndex = 22;
             loggedUserEmail.Text = "{User Email}";
             // 
             // buttonLogout
             // 
-            buttonLogout.Location = new Point(823, 31);
-            buttonLogout.Margin = new Padding(4);
+            buttonLogout.Location = new Point(658, 25);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(118, 36);
+            buttonLogout.Size = new Size(94, 29);
             buttonLogout.TabIndex = 21;
             buttonLogout.Text = "Logout";
             buttonLogout.UseVisualStyleBackColor = true;
@@ -93,9 +95,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(334, 21);
+            label1.Location = new Point(267, 17);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(305, 32);
+            label1.Size = new Size(250, 28);
             label1.TabIndex = 17;
             label1.Text = "Appointment Management";
             // 
@@ -105,31 +108,127 @@
             panelAddAppointment.Controls.Add(comboBoxPnlAddDName);
             panelAddAppointment.Controls.Add(dateTimePickerPnlAdd);
             panelAddAppointment.Controls.Add(label7);
-            panelAddAppointment.Controls.Add(this.textBoxtextBoxPnlAddEmail);
+            panelAddAppointment.Controls.Add(textBoxPnlAddEmail);
             panelAddAppointment.Controls.Add(textBoxPnlAddPName);
             panelAddAppointment.Controls.Add(label8);
             panelAddAppointment.Controls.Add(label9);
             panelAddAppointment.Controls.Add(buttonPnlAddCancel);
             panelAddAppointment.Controls.Add(buttonPnlCreateUser);
             panelAddAppointment.Controls.Add(label3);
-            panelAddAppointment.Location = new Point(239, 123);
+            panelAddAppointment.Location = new Point(191, 98);
+            panelAddAppointment.Margin = new Padding(2);
             panelAddAppointment.Name = "panelAddAppointment";
-            panelAddAppointment.Size = new Size(702, 317);
+            panelAddAppointment.Size = new Size(562, 254);
             panelAddAppointment.TabIndex = 34;
             panelAddAppointment.Visible = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(85, 113);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 20);
+            label5.TabIndex = 30;
+            label5.Text = "Doctor Name";
+            // 
+            // comboBoxPnlAddDName
+            // 
+            comboBoxPnlAddDName.FormattingEnabled = true;
+            comboBoxPnlAddDName.Location = new Point(218, 113);
+            comboBoxPnlAddDName.Margin = new Padding(2);
+            comboBoxPnlAddDName.Name = "comboBoxPnlAddDName";
+            comboBoxPnlAddDName.Size = new Size(259, 28);
+            comboBoxPnlAddDName.TabIndex = 29;
+            // 
+            // dateTimePickerPnlAdd
+            // 
+            dateTimePickerPnlAdd.Location = new Point(218, 144);
+            dateTimePickerPnlAdd.Margin = new Padding(2);
+            dateTimePickerPnlAdd.Name = "dateTimePickerPnlAdd";
+            dateTimePickerPnlAdd.Size = new Size(260, 27);
+            dateTimePickerPnlAdd.TabIndex = 28;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(85, 148);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(41, 20);
+            label7.TabIndex = 27;
+            label7.Text = "Date";
+            // 
+            // textBoxPnlAddEmail
+            // 
+            textBoxPnlAddEmail.Location = new Point(218, 82);
+            textBoxPnlAddEmail.Margin = new Padding(2);
+            textBoxPnlAddEmail.Name = "textBoxPnlAddEmail";
+            textBoxPnlAddEmail.Size = new Size(260, 27);
+            textBoxPnlAddEmail.TabIndex = 25;
+            // 
+            // textBoxPnlAddPName
+            // 
+            textBoxPnlAddPName.Location = new Point(218, 53);
+            textBoxPnlAddPName.Margin = new Padding(2);
+            textBoxPnlAddPName.Name = "textBoxPnlAddPName";
+            textBoxPnlAddPName.Size = new Size(260, 27);
+            textBoxPnlAddPName.TabIndex = 24;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(85, 85);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(95, 20);
+            label8.TabIndex = 23;
+            label8.Text = "Patient Email";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(85, 55);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(98, 20);
+            label9.TabIndex = 22;
+            label9.Text = "Patient Name";
+            // 
+            // buttonPnlAddCancel
+            // 
+            buttonPnlAddCancel.Location = new Point(196, 206);
+            buttonPnlAddCancel.Margin = new Padding(2);
+            buttonPnlAddCancel.Name = "buttonPnlAddCancel";
+            buttonPnlAddCancel.Size = new Size(90, 27);
+            buttonPnlAddCancel.TabIndex = 13;
+            buttonPnlAddCancel.Text = "Cancel";
+            buttonPnlAddCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonPnlCreateUser
+            // 
+            buttonPnlCreateUser.Location = new Point(298, 206);
+            buttonPnlCreateUser.Margin = new Padding(2);
+            buttonPnlCreateUser.Name = "buttonPnlCreateUser";
+            buttonPnlCreateUser.Size = new Size(90, 27);
+            buttonPnlCreateUser.TabIndex = 12;
+            buttonPnlCreateUser.Text = "Create";
+            buttonPnlCreateUser.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(277, 17);
+            label3.Location = new Point(222, 14);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(215, 28);
+            label3.Size = new Size(186, 23);
             label3.TabIndex = 14;
             label3.Text = "Add New Appointment";
             // 
             // panelUpdateAppoint
             // 
+            panelUpdateAppoint.Controls.Add(panelAppointmentList);
             panelUpdateAppoint.Controls.Add(label6);
             panelUpdateAppoint.Controls.Add(comboBoxPnlUpdateDName);
             panelUpdateAppoint.Controls.Add(comboBoxPnlUpdateStatus);
@@ -143,251 +242,206 @@
             panelUpdateAppoint.Controls.Add(textBoxPnlUpdateName);
             panelUpdateAppoint.Controls.Add(labelPnlUpdateAppointEmail);
             panelUpdateAppoint.Controls.Add(labelPnlUpdateReceptName);
-            panelUpdateAppoint.Location = new Point(239, 123);
+            panelUpdateAppoint.Location = new Point(189, 98);
+            panelUpdateAppoint.Margin = new Padding(2);
             panelUpdateAppoint.Name = "panelUpdateAppoint";
-            panelUpdateAppoint.Size = new Size(702, 323);
+            panelUpdateAppoint.Size = new Size(562, 258);
             panelUpdateAppoint.TabIndex = 19;
             panelUpdateAppoint.Visible = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(280, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(199, 28);
-            label2.TabIndex = 14;
-            label2.Text = "Update Appointment";
-            // 
-            // buttonPnlEditCancel
-            // 
-            buttonPnlEditCancel.Location = new Point(237, 252);
-            buttonPnlEditCancel.Name = "buttonPnlEditCancel";
-            buttonPnlEditCancel.Size = new Size(112, 34);
-            buttonPnlEditCancel.TabIndex = 13;
-            buttonPnlEditCancel.Text = "Cancel";
-            buttonPnlEditCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonPnlUpdate
-            // 
-            buttonPnlUpdate.Location = new Point(368, 252);
-            buttonPnlUpdate.Name = "buttonPnlUpdate";
-            buttonPnlUpdate.Size = new Size(112, 34);
-            buttonPnlUpdate.TabIndex = 12;
-            buttonPnlUpdate.Text = "Update";
-            buttonPnlUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBoxPnlUpdateEmail
-            // 
-            textBoxPnlUpdateEmail.Location = new Point(224, 91);
-            textBoxPnlUpdateEmail.Name = "textBoxPnlUpdateEmail";
-            textBoxPnlUpdateEmail.Size = new Size(324, 31);
-            textBoxPnlUpdateEmail.TabIndex = 8;
-            // 
-            // textBoxPnlUpdateName
-            // 
-            textBoxPnlUpdateName.Location = new Point(224, 54);
-            textBoxPnlUpdateName.Name = "textBoxPnlUpdateName";
-            textBoxPnlUpdateName.Size = new Size(324, 31);
-            textBoxPnlUpdateName.TabIndex = 5;
-            // 
-            // labelPnlUpdateAppointEmail
-            // 
-            labelPnlUpdateAppointEmail.AutoSize = true;
-            labelPnlUpdateAppointEmail.Location = new Point(58, 94);
-            labelPnlUpdateAppointEmail.Name = "labelPnlUpdateAppointEmail";
-            labelPnlUpdateAppointEmail.Size = new Size(112, 25);
-            labelPnlUpdateAppointEmail.TabIndex = 3;
-            labelPnlUpdateAppointEmail.Text = "Patient Email";
-            // 
-            // labelPnlUpdateReceptName
-            // 
-            labelPnlUpdateReceptName.AutoSize = true;
-            labelPnlUpdateReceptName.Location = new Point(58, 57);
-            labelPnlUpdateReceptName.Name = "labelPnlUpdateReceptName";
-            labelPnlUpdateReceptName.Size = new Size(117, 25);
-            labelPnlUpdateReceptName.TabIndex = 0;
-            labelPnlUpdateReceptName.Text = "Patient Name";
-            // 
-            // buttonPnlAddCancel
-            // 
-            buttonPnlAddCancel.Location = new Point(245, 258);
-            buttonPnlAddCancel.Name = "buttonPnlAddCancel";
-            buttonPnlAddCancel.Size = new Size(112, 34);
-            buttonPnlAddCancel.TabIndex = 13;
-            buttonPnlAddCancel.Text = "Cancel";
-            buttonPnlAddCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonPnlCreateUser
-            // 
-            buttonPnlCreateUser.Location = new Point(373, 258);
-            buttonPnlCreateUser.Name = "buttonPnlCreateUser";
-            buttonPnlCreateUser.Size = new Size(112, 34);
-            buttonPnlCreateUser.TabIndex = 12;
-            buttonPnlCreateUser.Text = "Create";
-            buttonPnlCreateUser.UseVisualStyleBackColor = true;
-            // 
-            // buttonAppointmentList
-            // 
-            buttonAppointmentList.Location = new Point(59, 159);
-            buttonAppointmentList.Name = "buttonAppointmentList";
-            buttonAppointmentList.Size = new Size(128, 34);
-            buttonAppointmentList.TabIndex = 35;
-            buttonAppointmentList.Text = "Appoint. List";
-            buttonAppointmentList.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditAppointment
-            // 
-            buttonEditAppointment.Location = new Point(59, 312);
-            buttonEditAppointment.Name = "buttonEditAppointment";
-            buttonEditAppointment.Size = new Size(128, 34);
-            buttonEditAppointment.TabIndex = 33;
-            buttonEditAppointment.Text = "Edit Appoint.";
-            buttonEditAppointment.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteAppointment
-            // 
-            buttonDeleteAppointment.Location = new Point(59, 262);
-            buttonDeleteAppointment.Name = "buttonDeleteAppointment";
-            buttonDeleteAppointment.Size = new Size(128, 34);
-            buttonDeleteAppointment.TabIndex = 32;
-            buttonDeleteAppointment.Text = "Delete Appoint.";
-            buttonDeleteAppointment.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddAppointment
-            // 
-            buttonAddAppointment.Location = new Point(59, 212);
-            buttonAddAppointment.Name = "buttonAddAppointment";
-            buttonAddAppointment.Size = new Size(128, 34);
-            buttonAddAppointment.TabIndex = 31;
-            buttonAddAppointment.Text = "Add Appoint.";
-            buttonAddAppointment.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(58, 210);
-            label4.Name = "label4";
-            label4.Size = new Size(60, 25);
-            label4.TabIndex = 15;
-            label4.Text = "Status";
-            // 
-            // labelPnlAddDate
-            // 
-            labelPnlAddDate.AutoSize = true;
-            labelPnlAddDate.Location = new Point(58, 172);
-            labelPnlAddDate.Name = "labelPnlAddDate";
-            labelPnlAddDate.Size = new Size(49, 25);
-            labelPnlAddDate.TabIndex = 16;
-            labelPnlAddDate.Text = "Date";
-            // 
-            // dateTimePickerPnlUpdate
-            // 
-            dateTimePickerPnlUpdate.Location = new Point(225, 167);
-            dateTimePickerPnlUpdate.Name = "dateTimePickerPnlUpdate";
-            dateTimePickerPnlUpdate.Size = new Size(324, 31);
-            dateTimePickerPnlUpdate.TabIndex = 18;
-            // 
-            // doctorBindingSource
-            // 
-            doctorBindingSource.DataSource = typeof(Models.Doctor);
-            // 
-            // comboBoxPnlUpdateStatus
-            // 
-            comboBoxPnlUpdateStatus.FormattingEnabled = true;
-            comboBoxPnlUpdateStatus.Items.AddRange(new object[] { "Active", "Inactive" });
-            comboBoxPnlUpdateStatus.Location = new Point(224, 205);
-            comboBoxPnlUpdateStatus.Name = "comboBoxPnlUpdateStatus";
-            comboBoxPnlUpdateStatus.Size = new Size(323, 33);
-            comboBoxPnlUpdateStatus.TabIndex = 22;
-            // 
-            // textBoxtextBoxPnlAddEmail
-            // 
-            this.textBoxtextBoxPnlAddEmail.Location = new Point(272, 103);
-            this.textBoxtextBoxPnlAddEmail.Name = "textBoxtextBoxPnlAddEmail";
-            this.textBoxtextBoxPnlAddEmail.Size = new Size(324, 31);
-            this.textBoxtextBoxPnlAddEmail.TabIndex = 25;
-            // 
-            // textBoxPnlAddPName
-            // 
-            textBoxPnlAddPName.Location = new Point(272, 66);
-            textBoxPnlAddPName.Name = "textBoxPnlAddPName";
-            textBoxPnlAddPName.Size = new Size(324, 31);
-            textBoxPnlAddPName.TabIndex = 24;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(106, 106);
-            label8.Name = "label8";
-            label8.Size = new Size(112, 25);
-            label8.TabIndex = 23;
-            label8.Text = "Patient Email";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(106, 69);
-            label9.Name = "label9";
-            label9.Size = new Size(117, 25);
-            label9.TabIndex = 22;
-            label9.Text = "Patient Name";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(58, 128);
+            label6.Location = new Point(46, 102);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(119, 25);
+            label6.Size = new Size(99, 20);
             label6.TabIndex = 26;
             label6.Text = "Doctor Name";
             // 
             // comboBoxPnlUpdateDName
             // 
             comboBoxPnlUpdateDName.FormattingEnabled = true;
-            comboBoxPnlUpdateDName.Location = new Point(224, 128);
+            comboBoxPnlUpdateDName.Location = new Point(179, 102);
+            comboBoxPnlUpdateDName.Margin = new Padding(2);
             comboBoxPnlUpdateDName.Name = "comboBoxPnlUpdateDName";
-            comboBoxPnlUpdateDName.Size = new Size(323, 33);
+            comboBoxPnlUpdateDName.Size = new Size(259, 28);
             comboBoxPnlUpdateDName.TabIndex = 25;
             // 
-            // label5
+            // comboBoxPnlUpdateStatus
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(106, 141);
-            label5.Name = "label5";
-            label5.Size = new Size(119, 25);
-            label5.TabIndex = 30;
-            label5.Text = "Doctor Name";
+            comboBoxPnlUpdateStatus.FormattingEnabled = true;
+            comboBoxPnlUpdateStatus.Items.AddRange(new object[] { "Active", "Inactive" });
+            comboBoxPnlUpdateStatus.Location = new Point(179, 164);
+            comboBoxPnlUpdateStatus.Margin = new Padding(2);
+            comboBoxPnlUpdateStatus.Name = "comboBoxPnlUpdateStatus";
+            comboBoxPnlUpdateStatus.Size = new Size(259, 28);
+            comboBoxPnlUpdateStatus.TabIndex = 22;
             // 
-            // comboBoxPnlAddDName
+            // dateTimePickerPnlUpdate
             // 
-            comboBoxPnlAddDName.FormattingEnabled = true;
-            comboBoxPnlAddDName.Location = new Point(272, 141);
-            comboBoxPnlAddDName.Name = "comboBoxPnlAddDName";
-            comboBoxPnlAddDName.Size = new Size(323, 33);
-            comboBoxPnlAddDName.TabIndex = 29;
+            dateTimePickerPnlUpdate.Location = new Point(180, 134);
+            dateTimePickerPnlUpdate.Margin = new Padding(2);
+            dateTimePickerPnlUpdate.Name = "dateTimePickerPnlUpdate";
+            dateTimePickerPnlUpdate.Size = new Size(260, 27);
+            dateTimePickerPnlUpdate.TabIndex = 18;
             // 
-            // dateTimePickerPnlAdd
+            // labelPnlAddDate
             // 
-            dateTimePickerPnlAdd.Location = new Point(273, 180);
-            dateTimePickerPnlAdd.Name = "dateTimePickerPnlAdd";
-            dateTimePickerPnlAdd.Size = new Size(324, 31);
-            dateTimePickerPnlAdd.TabIndex = 28;
+            labelPnlAddDate.AutoSize = true;
+            labelPnlAddDate.Location = new Point(46, 138);
+            labelPnlAddDate.Margin = new Padding(2, 0, 2, 0);
+            labelPnlAddDate.Name = "labelPnlAddDate";
+            labelPnlAddDate.Size = new Size(41, 20);
+            labelPnlAddDate.TabIndex = 16;
+            labelPnlAddDate.Text = "Date";
             // 
-            // label7
+            // label4
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(106, 185);
-            label7.Name = "label7";
-            label7.Size = new Size(49, 25);
-            label7.TabIndex = 27;
-            label7.Text = "Date";
+            label4.AutoSize = true;
+            label4.Location = new Point(46, 168);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 20);
+            label4.TabIndex = 15;
+            label4.Text = "Status";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(224, 12);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(172, 23);
+            label2.TabIndex = 14;
+            label2.Text = "Update Appointment";
+            // 
+            // buttonPnlEditCancel
+            // 
+            buttonPnlEditCancel.Location = new Point(190, 202);
+            buttonPnlEditCancel.Margin = new Padding(2);
+            buttonPnlEditCancel.Name = "buttonPnlEditCancel";
+            buttonPnlEditCancel.Size = new Size(90, 27);
+            buttonPnlEditCancel.TabIndex = 13;
+            buttonPnlEditCancel.Text = "Cancel";
+            buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonPnlUpdate
+            // 
+            buttonPnlUpdate.Location = new Point(294, 202);
+            buttonPnlUpdate.Margin = new Padding(2);
+            buttonPnlUpdate.Name = "buttonPnlUpdate";
+            buttonPnlUpdate.Size = new Size(90, 27);
+            buttonPnlUpdate.TabIndex = 12;
+            buttonPnlUpdate.Text = "Update";
+            buttonPnlUpdate.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPnlUpdateEmail
+            // 
+            textBoxPnlUpdateEmail.Location = new Point(179, 73);
+            textBoxPnlUpdateEmail.Margin = new Padding(2);
+            textBoxPnlUpdateEmail.Name = "textBoxPnlUpdateEmail";
+            textBoxPnlUpdateEmail.Size = new Size(260, 27);
+            textBoxPnlUpdateEmail.TabIndex = 8;
+            // 
+            // textBoxPnlUpdateName
+            // 
+            textBoxPnlUpdateName.Location = new Point(179, 43);
+            textBoxPnlUpdateName.Margin = new Padding(2);
+            textBoxPnlUpdateName.Name = "textBoxPnlUpdateName";
+            textBoxPnlUpdateName.Size = new Size(260, 27);
+            textBoxPnlUpdateName.TabIndex = 5;
+            // 
+            // labelPnlUpdateAppointEmail
+            // 
+            labelPnlUpdateAppointEmail.AutoSize = true;
+            labelPnlUpdateAppointEmail.Location = new Point(46, 75);
+            labelPnlUpdateAppointEmail.Margin = new Padding(2, 0, 2, 0);
+            labelPnlUpdateAppointEmail.Name = "labelPnlUpdateAppointEmail";
+            labelPnlUpdateAppointEmail.Size = new Size(95, 20);
+            labelPnlUpdateAppointEmail.TabIndex = 3;
+            labelPnlUpdateAppointEmail.Text = "Patient Email";
+            // 
+            // labelPnlUpdateReceptName
+            // 
+            labelPnlUpdateReceptName.AutoSize = true;
+            labelPnlUpdateReceptName.Location = new Point(46, 46);
+            labelPnlUpdateReceptName.Margin = new Padding(2, 0, 2, 0);
+            labelPnlUpdateReceptName.Name = "labelPnlUpdateReceptName";
+            labelPnlUpdateReceptName.Size = new Size(98, 20);
+            labelPnlUpdateReceptName.TabIndex = 0;
+            labelPnlUpdateReceptName.Text = "Patient Name";
+            // 
+            // buttonAppointmentList
+            // 
+            buttonAppointmentList.Location = new Point(47, 127);
+            buttonAppointmentList.Margin = new Padding(2);
+            buttonAppointmentList.Name = "buttonAppointmentList";
+            buttonAppointmentList.Size = new Size(102, 27);
+            buttonAppointmentList.TabIndex = 35;
+            buttonAppointmentList.Text = "Appoint. List";
+            buttonAppointmentList.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditAppointment
+            // 
+            buttonEditAppointment.Location = new Point(47, 250);
+            buttonEditAppointment.Margin = new Padding(2);
+            buttonEditAppointment.Name = "buttonEditAppointment";
+            buttonEditAppointment.Size = new Size(102, 27);
+            buttonEditAppointment.TabIndex = 33;
+            buttonEditAppointment.Text = "Edit Appoint.";
+            buttonEditAppointment.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteAppointment
+            // 
+            buttonDeleteAppointment.Location = new Point(47, 210);
+            buttonDeleteAppointment.Margin = new Padding(2);
+            buttonDeleteAppointment.Name = "buttonDeleteAppointment";
+            buttonDeleteAppointment.Size = new Size(102, 27);
+            buttonDeleteAppointment.TabIndex = 32;
+            buttonDeleteAppointment.Text = "Delete Appoint.";
+            buttonDeleteAppointment.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddAppointment
+            // 
+            buttonAddAppointment.Location = new Point(47, 170);
+            buttonAddAppointment.Margin = new Padding(2);
+            buttonAddAppointment.Name = "buttonAddAppointment";
+            buttonAddAppointment.Size = new Size(102, 27);
+            buttonAddAppointment.TabIndex = 31;
+            buttonAddAppointment.Text = "Add Appoint.";
+            buttonAddAppointment.UseVisualStyleBackColor = true;
+            // 
+            // doctorBindingSource
+            // 
+            doctorBindingSource.DataSource = typeof(Models.Doctor);
+            // 
+            // panelAppointmentList
+            // 
+            panelAppointmentList.Controls.Add(dataGridViewAppointment);
+            panelAppointmentList.Location = new Point(1, 2);
+            panelAppointmentList.Margin = new Padding(2);
+            panelAppointmentList.Name = "panelAppointmentList";
+            panelAppointmentList.Size = new Size(562, 258);
+            panelAppointmentList.TabIndex = 36;
+            panelAppointmentList.Visible = false;
+            // 
+            // dataGridViewAppointment
+            // 
+            dataGridViewAppointment.AllowUserToOrderColumns = true;
+            dataGridViewAppointment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAppointment.Location = new Point(17, 3);
+            dataGridViewAppointment.Name = "dataGridViewAppointment";
+            dataGridViewAppointment.RowHeadersWidth = 51;
+            dataGridViewAppointment.Size = new Size(559, 258);
+            dataGridViewAppointment.TabIndex = 21;
             // 
             // AppointmentManagement
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
+            ClientSize = new Size(800, 450);
             Controls.Add(panelUpdateAppoint);
             Controls.Add(panelAddAppointment);
             Controls.Add(buttonAppointmentList);
@@ -397,6 +451,7 @@
             Controls.Add(loggedUserEmail);
             Controls.Add(buttonLogout);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "AppointmentManagement";
             Text = "AppointmentManagement";
             panelAddAppointment.ResumeLayout(false);
@@ -404,6 +459,8 @@
             panelUpdateAppoint.ResumeLayout(false);
             panelUpdateAppoint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)doctorBindingSource).EndInit();
+            panelAppointmentList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAppointment).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -419,6 +476,7 @@
         private Label label2;
         private Button buttonPnlEditCancel;
         private Button buttonPnlUpdate;
+        private TextBox textBoxPnlAddEmail;
         private TextBox textBoxPnlUpdateEmail;
         private TextBox textBoxPnlUpdateName;
         private Label labelPnlUpdateAppointEmail;
@@ -445,5 +503,7 @@
         private Label label7;
         private Label label6;
         private ComboBox comboBoxPnlUpdateDName;
+        private Panel panelAppointmentList;
+        private DataGridView dataGridViewAppointment;
     }
 }

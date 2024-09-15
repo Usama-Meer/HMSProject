@@ -38,7 +38,7 @@ namespace HMSProject.Forms
             string email = textBoxEmail.Text;
             string password = textBoxPassword.Text;
 
-            var user = _context.Users
+            var user = _context.Users.AsNoTracking()
         .Include(u => u.Role)
         .FirstOrDefault(u => u.Email == email && u.Password == password);
 

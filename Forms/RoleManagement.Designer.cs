@@ -52,55 +52,60 @@
             labelPnlAddRoleDesc = new Label();
             labelPnlAddRoleId = new Label();
             labelPnlAddRoleName = new Label();
+            panelRoleList = new Panel();
+            dataGridViewRole = new DataGridView();
             panelAddRole.SuspendLayout();
             panelUpdateRole.SuspendLayout();
+            panelRoleList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRole).BeginInit();
             SuspendLayout();
             // 
             // loggedUserEmail
             // 
             loggedUserEmail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             loggedUserEmail.AutoSize = true;
-            loggedUserEmail.Location = new Point(726, 31);
-            loggedUserEmail.Margin = new Padding(4, 0, 4, 0);
+            loggedUserEmail.Location = new Point(581, 25);
             loggedUserEmail.Name = "loggedUserEmail";
-            loggedUserEmail.Size = new Size(104, 25);
+            loggedUserEmail.Size = new Size(89, 20);
             loggedUserEmail.TabIndex = 16;
             loggedUserEmail.Text = "{User Email}";
             // 
             // buttonLogout
             // 
             buttonLogout.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            buttonLogout.Location = new Point(845, 26);
-            buttonLogout.Margin = new Padding(4);
+            buttonLogout.Location = new Point(676, 21);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(118, 36);
+            buttonLogout.Size = new Size(94, 29);
             buttonLogout.TabIndex = 15;
             buttonLogout.Text = "Logout";
             buttonLogout.UseVisualStyleBackColor = true;
             // 
             // buttonEditRole
             // 
-            buttonEditRole.Location = new Point(19, 316);
+            buttonEditRole.Location = new Point(15, 253);
+            buttonEditRole.Margin = new Padding(2, 2, 2, 2);
             buttonEditRole.Name = "buttonEditRole";
-            buttonEditRole.Size = new Size(128, 34);
+            buttonEditRole.Size = new Size(102, 27);
             buttonEditRole.TabIndex = 14;
             buttonEditRole.Text = "Edit Role";
             buttonEditRole.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteRole
             // 
-            buttonDeleteRole.Location = new Point(19, 266);
+            buttonDeleteRole.Location = new Point(15, 213);
+            buttonDeleteRole.Margin = new Padding(2, 2, 2, 2);
             buttonDeleteRole.Name = "buttonDeleteRole";
-            buttonDeleteRole.Size = new Size(128, 34);
+            buttonDeleteRole.Size = new Size(102, 27);
             buttonDeleteRole.TabIndex = 13;
             buttonDeleteRole.Text = "Delete Role";
             buttonDeleteRole.UseVisualStyleBackColor = true;
             // 
             // buttonAddRole
             // 
-            buttonAddRole.Location = new Point(19, 216);
+            buttonAddRole.Location = new Point(15, 173);
+            buttonAddRole.Margin = new Padding(2, 2, 2, 2);
             buttonAddRole.Name = "buttonAddRole";
-            buttonAddRole.Size = new Size(128, 34);
+            buttonAddRole.Size = new Size(102, 27);
             buttonAddRole.TabIndex = 12;
             buttonAddRole.Text = "Add Role";
             buttonAddRole.UseVisualStyleBackColor = true;
@@ -109,17 +114,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(365, 30);
+            label1.Location = new Point(292, 24);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(210, 32);
+            label1.Size = new Size(171, 28);
             label1.TabIndex = 11;
             label1.Text = "Role Management";
             // 
             // buttonRoleList
             // 
-            buttonRoleList.Location = new Point(19, 163);
+            buttonRoleList.Location = new Point(15, 130);
+            buttonRoleList.Margin = new Padding(2, 2, 2, 2);
             buttonRoleList.Name = "buttonRoleList";
-            buttonRoleList.Size = new Size(128, 34);
+            buttonRoleList.Size = new Size(102, 27);
             buttonRoleList.TabIndex = 22;
             buttonRoleList.Text = "Role List";
             buttonRoleList.UseVisualStyleBackColor = true;
@@ -135,9 +142,10 @@
             panelAddRole.Controls.Add(labelPnlAddRoleDesc);
             panelAddRole.Controls.Add(labelPnlAddRoleId);
             panelAddRole.Controls.Add(labelPnlAddRoleName);
-            panelAddRole.Location = new Point(199, 127);
+            panelAddRole.Location = new Point(159, 102);
+            panelAddRole.Margin = new Padding(2, 2, 2, 2);
             panelAddRole.Name = "panelAddRole";
-            panelAddRole.Size = new Size(702, 317);
+            panelAddRole.Size = new Size(562, 254);
             panelAddRole.TabIndex = 21;
             panelAddRole.Visible = false;
             // 
@@ -145,14 +153,16 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(277, 17);
+            label3.Location = new Point(222, 14);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(136, 28);
+            label3.Size = new Size(118, 23);
             label3.TabIndex = 14;
             label3.Text = "Add New Role";
             // 
             // panelUpdateRole
             // 
+            panelUpdateRole.Controls.Add(panelRoleList);
             panelUpdateRole.Controls.Add(label2);
             panelUpdateRole.Controls.Add(buttonPnlEditCancel);
             panelUpdateRole.Controls.Add(buttonPnlUpdate);
@@ -161,8 +171,9 @@
             panelUpdateRole.Controls.Add(labelPnlUpdateRoleDesc);
             panelUpdateRole.Controls.Add(labelPnlUpdateRoleName);
             panelUpdateRole.Location = new Point(0, 0);
+            panelUpdateRole.Margin = new Padding(2, 2, 2, 2);
             panelUpdateRole.Name = "panelUpdateRole";
-            panelUpdateRole.Size = new Size(702, 323);
+            panelUpdateRole.Size = new Size(562, 258);
             panelUpdateRole.TabIndex = 19;
             panelUpdateRole.Visible = false;
             panelUpdateRole.Paint += panelUpdateUser_Paint;
@@ -171,126 +182,160 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(280, 15);
+            label2.Location = new Point(224, 12);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(120, 28);
+            label2.Size = new Size(104, 23);
             label2.TabIndex = 14;
             label2.Text = "Update Role";
             // 
             // buttonPnlEditCancel
             // 
-            buttonPnlEditCancel.Location = new Point(237, 252);
+            buttonPnlEditCancel.Location = new Point(190, 202);
+            buttonPnlEditCancel.Margin = new Padding(2, 2, 2, 2);
             buttonPnlEditCancel.Name = "buttonPnlEditCancel";
-            buttonPnlEditCancel.Size = new Size(112, 34);
+            buttonPnlEditCancel.Size = new Size(90, 27);
             buttonPnlEditCancel.TabIndex = 13;
             buttonPnlEditCancel.Text = "Cancel";
             buttonPnlEditCancel.UseVisualStyleBackColor = true;
             // 
             // buttonPnlUpdate
             // 
-            buttonPnlUpdate.Location = new Point(368, 252);
+            buttonPnlUpdate.Location = new Point(294, 202);
+            buttonPnlUpdate.Margin = new Padding(2, 2, 2, 2);
             buttonPnlUpdate.Name = "buttonPnlUpdate";
-            buttonPnlUpdate.Size = new Size(112, 34);
+            buttonPnlUpdate.Size = new Size(90, 27);
             buttonPnlUpdate.TabIndex = 12;
             buttonPnlUpdate.Text = "Update";
             buttonPnlUpdate.UseVisualStyleBackColor = true;
             // 
             // textBoxPnlUpdateRoleDesc
             // 
-            textBoxPnlUpdateRoleDesc.Location = new Point(330, 156);
+            textBoxPnlUpdateRoleDesc.Location = new Point(264, 125);
+            textBoxPnlUpdateRoleDesc.Margin = new Padding(2, 2, 2, 2);
             textBoxPnlUpdateRoleDesc.Name = "textBoxPnlUpdateRoleDesc";
-            textBoxPnlUpdateRoleDesc.Size = new Size(274, 31);
+            textBoxPnlUpdateRoleDesc.Size = new Size(220, 27);
             textBoxPnlUpdateRoleDesc.TabIndex = 8;
             // 
             // textBoxPnlUpdateRoleName
             // 
-            textBoxPnlUpdateRoleName.Location = new Point(328, 93);
+            textBoxPnlUpdateRoleName.Location = new Point(262, 74);
+            textBoxPnlUpdateRoleName.Margin = new Padding(2, 2, 2, 2);
             textBoxPnlUpdateRoleName.Name = "textBoxPnlUpdateRoleName";
-            textBoxPnlUpdateRoleName.Size = new Size(274, 31);
+            textBoxPnlUpdateRoleName.Size = new Size(220, 27);
             textBoxPnlUpdateRoleName.TabIndex = 5;
             // 
             // labelPnlUpdateRoleDesc
             // 
             labelPnlUpdateRoleDesc.AutoSize = true;
-            labelPnlUpdateRoleDesc.Location = new Point(144, 161);
+            labelPnlUpdateRoleDesc.Location = new Point(115, 129);
+            labelPnlUpdateRoleDesc.Margin = new Padding(2, 0, 2, 0);
             labelPnlUpdateRoleDesc.Name = "labelPnlUpdateRoleDesc";
-            labelPnlUpdateRoleDesc.Size = new Size(141, 25);
+            labelPnlUpdateRoleDesc.Size = new Size(119, 20);
             labelPnlUpdateRoleDesc.TabIndex = 3;
             labelPnlUpdateRoleDesc.Text = "Role Description";
             // 
             // labelPnlUpdateRoleName
             // 
             labelPnlUpdateRoleName.AutoSize = true;
-            labelPnlUpdateRoleName.Location = new Point(143, 99);
+            labelPnlUpdateRoleName.Location = new Point(114, 79);
+            labelPnlUpdateRoleName.Margin = new Padding(2, 0, 2, 0);
             labelPnlUpdateRoleName.Name = "labelPnlUpdateRoleName";
-            labelPnlUpdateRoleName.Size = new Size(98, 25);
+            labelPnlUpdateRoleName.Size = new Size(83, 20);
             labelPnlUpdateRoleName.TabIndex = 0;
             labelPnlUpdateRoleName.Text = "Role Name";
             // 
             // buttonPnlAddCancel
             // 
-            buttonPnlAddCancel.Location = new Point(245, 258);
+            buttonPnlAddCancel.Location = new Point(196, 206);
+            buttonPnlAddCancel.Margin = new Padding(2, 2, 2, 2);
             buttonPnlAddCancel.Name = "buttonPnlAddCancel";
-            buttonPnlAddCancel.Size = new Size(112, 34);
+            buttonPnlAddCancel.Size = new Size(90, 27);
             buttonPnlAddCancel.TabIndex = 13;
             buttonPnlAddCancel.Text = "Cancel";
             buttonPnlAddCancel.UseVisualStyleBackColor = true;
             // 
             // buttonPnlCreateUser
             // 
-            buttonPnlCreateUser.Location = new Point(373, 258);
+            buttonPnlCreateUser.Location = new Point(298, 206);
+            buttonPnlCreateUser.Margin = new Padding(2, 2, 2, 2);
             buttonPnlCreateUser.Name = "buttonPnlCreateUser";
-            buttonPnlCreateUser.Size = new Size(112, 34);
+            buttonPnlCreateUser.Size = new Size(90, 27);
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
             // 
             // textBoxPnlAddRoleId
             // 
-            textBoxPnlAddRoleId.Location = new Point(318, 198);
+            textBoxPnlAddRoleId.Location = new Point(254, 158);
+            textBoxPnlAddRoleId.Margin = new Padding(2, 2, 2, 2);
             textBoxPnlAddRoleId.Name = "textBoxPnlAddRoleId";
-            textBoxPnlAddRoleId.Size = new Size(274, 31);
+            textBoxPnlAddRoleId.Size = new Size(220, 27);
             textBoxPnlAddRoleId.TabIndex = 11;
             // 
             // textBoxPnlAddRoleDesc
             // 
-            textBoxPnlAddRoleDesc.Location = new Point(318, 134);
+            textBoxPnlAddRoleDesc.Location = new Point(254, 107);
+            textBoxPnlAddRoleDesc.Margin = new Padding(2, 2, 2, 2);
             textBoxPnlAddRoleDesc.Name = "textBoxPnlAddRoleDesc";
-            textBoxPnlAddRoleDesc.Size = new Size(274, 31);
+            textBoxPnlAddRoleDesc.Size = new Size(220, 27);
             textBoxPnlAddRoleDesc.TabIndex = 8;
             // 
             // labelPnlAddRoleDesc
             // 
             labelPnlAddRoleDesc.AutoSize = true;
-            labelPnlAddRoleDesc.Location = new Point(142, 134);
+            labelPnlAddRoleDesc.Location = new Point(114, 107);
+            labelPnlAddRoleDesc.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddRoleDesc.Name = "labelPnlAddRoleDesc";
-            labelPnlAddRoleDesc.Size = new Size(87, 25);
+            labelPnlAddRoleDesc.Size = new Size(70, 20);
             labelPnlAddRoleDesc.TabIndex = 3;
             labelPnlAddRoleDesc.Text = "Password";
             // 
             // labelPnlAddRoleId
             // 
             labelPnlAddRoleId.AutoSize = true;
-            labelPnlAddRoleId.Location = new Point(142, 200);
+            labelPnlAddRoleId.Location = new Point(114, 160);
+            labelPnlAddRoleId.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddRoleId.Name = "labelPnlAddRoleId";
-            labelPnlAddRoleId.Size = new Size(67, 25);
+            labelPnlAddRoleId.Size = new Size(56, 20);
             labelPnlAddRoleId.TabIndex = 1;
             labelPnlAddRoleId.Text = "Role Id";
             // 
             // labelPnlAddRoleName
             // 
             labelPnlAddRoleName.AutoSize = true;
-            labelPnlAddRoleName.Location = new Point(141, 72);
+            labelPnlAddRoleName.Location = new Point(113, 58);
+            labelPnlAddRoleName.Margin = new Padding(2, 0, 2, 0);
             labelPnlAddRoleName.Name = "labelPnlAddRoleName";
-            labelPnlAddRoleName.Size = new Size(98, 25);
+            labelPnlAddRoleName.Size = new Size(83, 20);
             labelPnlAddRoleName.TabIndex = 0;
             labelPnlAddRoleName.Text = "Role Name";
             // 
+            // panelRoleList
+            // 
+            panelRoleList.Controls.Add(dataGridViewRole);
+            panelRoleList.Location = new Point(2, 0);
+            panelRoleList.Margin = new Padding(2);
+            panelRoleList.Name = "panelRoleList";
+            panelRoleList.Size = new Size(562, 258);
+            panelRoleList.TabIndex = 21;
+            panelRoleList.Visible = false;
+            // 
+            // dataGridViewRole
+            // 
+            dataGridViewRole.AllowUserToOrderColumns = true;
+            dataGridViewRole.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewRole.Location = new Point(17, 3);
+            dataGridViewRole.Name = "dataGridViewRole";
+            dataGridViewRole.RowHeadersWidth = 51;
+            dataGridViewRole.Size = new Size(559, 258);
+            dataGridViewRole.TabIndex = 21;
+            // 
             // RoleManagement
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
+            ClientSize = new Size(800, 450);
             Controls.Add(buttonRoleList);
             Controls.Add(panelAddRole);
             Controls.Add(loggedUserEmail);
@@ -299,6 +344,7 @@
             Controls.Add(buttonDeleteRole);
             Controls.Add(buttonAddRole);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "RoleManagement";
             Text = "RoleManagement";
             Load += RoleManagement_Load;
@@ -306,6 +352,8 @@
             panelAddRole.PerformLayout();
             panelUpdateRole.ResumeLayout(false);
             panelUpdateRole.PerformLayout();
+            panelRoleList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRole).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,5 +387,7 @@
         private Label labelPnlAddRoleDesc;
         private Label labelPnlAddRoleId;
         private Label labelPnlAddRoleName;
+        private Panel panelRoleList;
+        private DataGridView dataGridViewRole;
     }
 }
