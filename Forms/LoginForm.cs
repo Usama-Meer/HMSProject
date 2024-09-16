@@ -55,13 +55,13 @@ namespace HMSProject.Forms
                         
                         break;
                     case "Doctor":
-                        formToOpen = new UserDashboard(user.Id, _context);
+                        formToOpen = new DoctorDashboard(user.Id, _context);
                         break;
                     case "Patient":
-                        formToOpen = new UserDashboard(user.Id, _context);
+                        formToOpen = new PatientDashboard(user.Id, _context);
                         break;
                     case "Receiptionist":
-                        formToOpen = new UserDashboard(user.Id, _context);
+                        formToOpen = new ReceiptionistDashboard(user.Id, _context);
                         break;
                     default:
                         MessageBox.Show("Role not recognized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return;

@@ -40,34 +40,32 @@
             buttonPnlEditCancel = new Button();
             buttonPnlUpdate = new Button();
             label3 = new Label();
-            panelAddRole = new Panel();
-            textBox2 = new TextBox();
+            panelAddPatient = new Panel();
+            PnlAddDateTimePicker = new DateTimePicker();
+            textBoxPnlAddAddress = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            textBox3 = new TextBox();
+            textBoxPnlAddPhone = new TextBox();
             label7 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            textBox4 = new TextBox();
+            textBoxPnlAddEmail = new TextBox();
             textBoxPnlAddName = new TextBox();
             label8 = new Label();
             labelPnlAddPatientName = new Label();
-            panelUpdateRole = new Panel();
-            textBoxlabelPnlUpdateAddress = new TextBox();
+            panelUpdatePatient = new Panel();
+            pnlUpdateDateTimePicker = new DateTimePicker();
+            textBoxPnlUpdateAddress = new TextBox();
             labelPnlUpdateAdress = new Label();
             labelPnlUpdatePhone = new Label();
             textBoxPnlUpdatePhone = new TextBox();
             labelPnlUpdateEmail = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBoxPnlUpdateRoleDesc = new TextBox();
-            textBoxPnlUpdateRoleName = new TextBox();
+            textBoxPnlUpdateEmail = new TextBox();
+            textBoxPnlUpdateName = new TextBox();
             labelPnlUpdateDob = new Label();
             labelPnlUpdatePatientName = new Label();
             buttonPatientList = new Button();
-            panelPatientList = new Panel();
             dataGridViewPatient = new DataGridView();
-            panelAddRole.SuspendLayout();
-            panelUpdateRole.SuspendLayout();
-            panelPatientList.SuspendLayout();
+            panelAddPatient.SuspendLayout();
+            panelUpdatePatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPatient).BeginInit();
             SuspendLayout();
             // 
@@ -75,7 +73,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(279, 26);
+            label1.Location = new Point(244, 24);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(193, 28);
@@ -85,32 +83,35 @@
             // buttonAddPatient
             // 
             buttonAddPatient.Location = new Point(22, 208);
-            buttonAddPatient.Margin = new Padding(2, 2, 2, 2);
+            buttonAddPatient.Margin = new Padding(2);
             buttonAddPatient.Name = "buttonAddPatient";
             buttonAddPatient.Size = new Size(102, 27);
             buttonAddPatient.TabIndex = 1;
             buttonAddPatient.Text = "Add Patient";
             buttonAddPatient.UseVisualStyleBackColor = true;
+            buttonAddPatient.Click += buttonAddPatient_Click;
             // 
             // buttonDeletePatient
             // 
             buttonDeletePatient.Location = new Point(22, 250);
-            buttonDeletePatient.Margin = new Padding(2, 2, 2, 2);
+            buttonDeletePatient.Margin = new Padding(2);
             buttonDeletePatient.Name = "buttonDeletePatient";
             buttonDeletePatient.Size = new Size(102, 27);
             buttonDeletePatient.TabIndex = 2;
             buttonDeletePatient.Text = "Delete Patient";
             buttonDeletePatient.UseVisualStyleBackColor = true;
+            buttonDeletePatient.Click += buttonDeletePatient_Click;
             // 
             // buttonEditPatient
             // 
             buttonEditPatient.Location = new Point(22, 291);
-            buttonEditPatient.Margin = new Padding(2, 2, 2, 2);
+            buttonEditPatient.Margin = new Padding(2);
             buttonEditPatient.Name = "buttonEditPatient";
             buttonEditPatient.Size = new Size(102, 27);
             buttonEditPatient.TabIndex = 3;
             buttonEditPatient.Text = "Edit Patient";
             buttonEditPatient.UseVisualStyleBackColor = true;
+            buttonEditPatient.Click += buttonEditPatient_Click;
             // 
             // loggedUserEmail
             // 
@@ -129,26 +130,29 @@
             buttonLogout.TabIndex = 9;
             buttonLogout.Text = "Logout";
             buttonLogout.UseVisualStyleBackColor = true;
+            buttonLogout.Click += buttonLogout_Click;
             // 
             // buttonPnlAddCancel
             // 
             buttonPnlAddCancel.Location = new Point(196, 206);
-            buttonPnlAddCancel.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlAddCancel.Margin = new Padding(2);
             buttonPnlAddCancel.Name = "buttonPnlAddCancel";
             buttonPnlAddCancel.Size = new Size(90, 27);
             buttonPnlAddCancel.TabIndex = 13;
             buttonPnlAddCancel.Text = "Cancel";
             buttonPnlAddCancel.UseVisualStyleBackColor = true;
+            buttonPnlAddCancel.Click += PatientManagement_Load;
             // 
             // buttonPnlCreateUser
             // 
             buttonPnlCreateUser.Location = new Point(298, 206);
-            buttonPnlCreateUser.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlCreateUser.Margin = new Padding(2);
             buttonPnlCreateUser.Name = "buttonPnlCreateUser";
             buttonPnlCreateUser.Size = new Size(90, 27);
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
+            buttonPnlCreateUser.Click += buttonPanelCreatePatient;
             // 
             // label2
             // 
@@ -164,22 +168,24 @@
             // buttonPnlEditCancel
             // 
             buttonPnlEditCancel.Location = new Point(190, 202);
-            buttonPnlEditCancel.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlEditCancel.Margin = new Padding(2);
             buttonPnlEditCancel.Name = "buttonPnlEditCancel";
             buttonPnlEditCancel.Size = new Size(90, 27);
             buttonPnlEditCancel.TabIndex = 13;
             buttonPnlEditCancel.Text = "Cancel";
             buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            buttonPnlEditCancel.Click += PatientManagement_Load;
             // 
             // buttonPnlUpdate
             // 
             buttonPnlUpdate.Location = new Point(294, 202);
-            buttonPnlUpdate.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlUpdate.Margin = new Padding(2);
             buttonPnlUpdate.Name = "buttonPnlUpdate";
             buttonPnlUpdate.Size = new Size(90, 27);
             buttonPnlUpdate.TabIndex = 12;
             buttonPnlUpdate.Text = "Update";
             buttonPnlUpdate.UseVisualStyleBackColor = true;
+            buttonPnlUpdate.Click += buttonPanelUpdatePatient;
             // 
             // label3
             // 
@@ -192,36 +198,42 @@
             label3.TabIndex = 14;
             label3.Text = "Add New Patient";
             // 
-            // panelAddRole
+            // panelAddPatient
             // 
-            panelAddRole.Controls.Add(panelPatientList);
-            panelAddRole.Controls.Add(textBox2);
-            panelAddRole.Controls.Add(label5);
-            panelAddRole.Controls.Add(label6);
-            panelAddRole.Controls.Add(textBox3);
-            panelAddRole.Controls.Add(label7);
-            panelAddRole.Controls.Add(dateTimePicker2);
-            panelAddRole.Controls.Add(textBox4);
-            panelAddRole.Controls.Add(textBoxPnlAddName);
-            panelAddRole.Controls.Add(label8);
-            panelAddRole.Controls.Add(labelPnlAddPatientName);
-            panelAddRole.Controls.Add(label3);
-            panelAddRole.Controls.Add(buttonPnlAddCancel);
-            panelAddRole.Controls.Add(buttonPnlCreateUser);
-            panelAddRole.Location = new Point(2, 2);
-            panelAddRole.Margin = new Padding(2, 2, 2, 2);
-            panelAddRole.Name = "panelAddRole";
-            panelAddRole.Size = new Size(562, 254);
-            panelAddRole.TabIndex = 29;
-            panelAddRole.Visible = false;
+            panelAddPatient.Controls.Add(PnlAddDateTimePicker);
+            panelAddPatient.Controls.Add(textBoxPnlAddAddress);
+            panelAddPatient.Controls.Add(label5);
+            panelAddPatient.Controls.Add(label6);
+            panelAddPatient.Controls.Add(textBoxPnlAddPhone);
+            panelAddPatient.Controls.Add(label7);
+            panelAddPatient.Controls.Add(textBoxPnlAddEmail);
+            panelAddPatient.Controls.Add(textBoxPnlAddName);
+            panelAddPatient.Controls.Add(label8);
+            panelAddPatient.Controls.Add(labelPnlAddPatientName);
+            panelAddPatient.Controls.Add(label3);
+            panelAddPatient.Controls.Add(buttonPnlAddCancel);
+            panelAddPatient.Controls.Add(buttonPnlCreateUser);
+            panelAddPatient.Location = new Point(156, 113);
+            panelAddPatient.Margin = new Padding(2);
+            panelAddPatient.Name = "panelAddPatient";
+            panelAddPatient.Size = new Size(562, 259);
+            panelAddPatient.TabIndex = 29;
+            panelAddPatient.Visible = false;
             // 
-            // textBox2
+            // PnlAddDateTimePicker
             // 
-            textBox2.Location = new Point(134, 154);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(406, 27);
-            textBox2.TabIndex = 30;
+            PnlAddDateTimePicker.Location = new Point(412, 77);
+            PnlAddDateTimePicker.Name = "PnlAddDateTimePicker";
+            PnlAddDateTimePicker.Size = new Size(127, 27);
+            PnlAddDateTimePicker.TabIndex = 32;
+            // 
+            // textBoxPnlAddAddress
+            // 
+            textBoxPnlAddAddress.Location = new Point(134, 154);
+            textBoxPnlAddAddress.Margin = new Padding(2);
+            textBoxPnlAddAddress.Name = "textBoxPnlAddAddress";
+            textBoxPnlAddAddress.Size = new Size(406, 27);
+            textBoxPnlAddAddress.TabIndex = 30;
             // 
             // label5
             // 
@@ -243,13 +255,13 @@
             label6.TabIndex = 28;
             label6.Text = "Phone No.";
             // 
-            // textBox3
+            // textBoxPnlAddPhone
             // 
-            textBox3.Location = new Point(412, 114);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(127, 27);
-            textBox3.TabIndex = 27;
+            textBoxPnlAddPhone.Location = new Point(412, 114);
+            textBoxPnlAddPhone.Margin = new Padding(2);
+            textBoxPnlAddPhone.Name = "textBoxPnlAddPhone";
+            textBoxPnlAddPhone.Size = new Size(127, 27);
+            textBoxPnlAddPhone.TabIndex = 27;
             // 
             // label7
             // 
@@ -261,26 +273,18 @@
             label7.TabIndex = 26;
             label7.Text = "Patient Email";
             // 
-            // dateTimePicker2
+            // textBoxPnlAddEmail
             // 
-            dateTimePicker2.Location = new Point(412, 74);
-            dateTimePicker2.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(132, 27);
-            dateTimePicker2.TabIndex = 25;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(134, 116);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(127, 27);
-            textBox4.TabIndex = 24;
+            textBoxPnlAddEmail.Location = new Point(134, 116);
+            textBoxPnlAddEmail.Margin = new Padding(2);
+            textBoxPnlAddEmail.Name = "textBoxPnlAddEmail";
+            textBoxPnlAddEmail.Size = new Size(127, 27);
+            textBoxPnlAddEmail.TabIndex = 24;
             // 
             // textBoxPnlAddName
             // 
             textBoxPnlAddName.Location = new Point(134, 74);
-            textBoxPnlAddName.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlAddName.Margin = new Padding(2);
             textBoxPnlAddName.Name = "textBoxPnlAddName";
             textBoxPnlAddName.Size = new Size(126, 27);
             textBoxPnlAddName.TabIndex = 23;
@@ -305,36 +309,42 @@
             labelPnlAddPatientName.TabIndex = 21;
             labelPnlAddPatientName.Text = "Patient Name";
             // 
-            // panelUpdateRole
+            // panelUpdatePatient
             // 
-            panelUpdateRole.Controls.Add(panelAddRole);
-            panelUpdateRole.Controls.Add(textBoxlabelPnlUpdateAddress);
-            panelUpdateRole.Controls.Add(labelPnlUpdateAdress);
-            panelUpdateRole.Controls.Add(labelPnlUpdatePhone);
-            panelUpdateRole.Controls.Add(textBoxPnlUpdatePhone);
-            panelUpdateRole.Controls.Add(labelPnlUpdateEmail);
-            panelUpdateRole.Controls.Add(dateTimePicker1);
-            panelUpdateRole.Controls.Add(label2);
-            panelUpdateRole.Controls.Add(buttonPnlEditCancel);
-            panelUpdateRole.Controls.Add(buttonPnlUpdate);
-            panelUpdateRole.Controls.Add(textBoxPnlUpdateRoleDesc);
-            panelUpdateRole.Controls.Add(textBoxPnlUpdateRoleName);
-            panelUpdateRole.Controls.Add(labelPnlUpdateDob);
-            panelUpdateRole.Controls.Add(labelPnlUpdatePatientName);
-            panelUpdateRole.Location = new Point(154, 121);
-            panelUpdateRole.Margin = new Padding(2, 2, 2, 2);
-            panelUpdateRole.Name = "panelUpdateRole";
-            panelUpdateRole.Size = new Size(562, 258);
-            panelUpdateRole.TabIndex = 19;
-            panelUpdateRole.Visible = false;
+            panelUpdatePatient.Controls.Add(pnlUpdateDateTimePicker);
+            panelUpdatePatient.Controls.Add(textBoxPnlUpdateAddress);
+            panelUpdatePatient.Controls.Add(labelPnlUpdateAdress);
+            panelUpdatePatient.Controls.Add(labelPnlUpdatePhone);
+            panelUpdatePatient.Controls.Add(textBoxPnlUpdatePhone);
+            panelUpdatePatient.Controls.Add(labelPnlUpdateEmail);
+            panelUpdatePatient.Controls.Add(label2);
+            panelUpdatePatient.Controls.Add(buttonPnlEditCancel);
+            panelUpdatePatient.Controls.Add(buttonPnlUpdate);
+            panelUpdatePatient.Controls.Add(textBoxPnlUpdateEmail);
+            panelUpdatePatient.Controls.Add(textBoxPnlUpdateName);
+            panelUpdatePatient.Controls.Add(labelPnlUpdateDob);
+            panelUpdatePatient.Controls.Add(labelPnlUpdatePatientName);
+            panelUpdatePatient.Location = new Point(158, 113);
+            panelUpdatePatient.Margin = new Padding(2);
+            panelUpdatePatient.Name = "panelUpdatePatient";
+            panelUpdatePatient.Size = new Size(562, 260);
+            panelUpdatePatient.TabIndex = 19;
+            panelUpdatePatient.Visible = false;
             // 
-            // textBoxlabelPnlUpdateAddress
+            // pnlUpdateDateTimePicker
             // 
-            textBoxlabelPnlUpdateAddress.Location = new Point(129, 132);
-            textBoxlabelPnlUpdateAddress.Margin = new Padding(2, 2, 2, 2);
-            textBoxlabelPnlUpdateAddress.Name = "textBoxlabelPnlUpdateAddress";
-            textBoxlabelPnlUpdateAddress.Size = new Size(406, 27);
-            textBoxlabelPnlUpdateAddress.TabIndex = 20;
+            pnlUpdateDateTimePicker.Location = new Point(408, 51);
+            pnlUpdateDateTimePicker.Name = "pnlUpdateDateTimePicker";
+            pnlUpdateDateTimePicker.Size = new Size(127, 27);
+            pnlUpdateDateTimePicker.TabIndex = 33;
+            // 
+            // textBoxPnlUpdateAddress
+            // 
+            textBoxPnlUpdateAddress.Location = new Point(129, 132);
+            textBoxPnlUpdateAddress.Margin = new Padding(2);
+            textBoxPnlUpdateAddress.Name = "textBoxPnlUpdateAddress";
+            textBoxPnlUpdateAddress.Size = new Size(406, 27);
+            textBoxPnlUpdateAddress.TabIndex = 20;
             // 
             // labelPnlUpdateAdress
             // 
@@ -359,7 +369,7 @@
             // textBoxPnlUpdatePhone
             // 
             textBoxPnlUpdatePhone.Location = new Point(407, 93);
-            textBoxPnlUpdatePhone.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlUpdatePhone.Margin = new Padding(2);
             textBoxPnlUpdatePhone.Name = "textBoxPnlUpdatePhone";
             textBoxPnlUpdatePhone.Size = new Size(127, 27);
             textBoxPnlUpdatePhone.TabIndex = 17;
@@ -374,30 +384,22 @@
             labelPnlUpdateEmail.TabIndex = 16;
             labelPnlUpdateEmail.Text = "Patient Email";
             // 
-            // dateTimePicker1
+            // textBoxPnlUpdateEmail
             // 
-            dateTimePicker1.Location = new Point(407, 53);
-            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(132, 27);
-            dateTimePicker1.TabIndex = 15;
+            textBoxPnlUpdateEmail.Location = new Point(130, 94);
+            textBoxPnlUpdateEmail.Margin = new Padding(2);
+            textBoxPnlUpdateEmail.Name = "textBoxPnlUpdateEmail";
+            textBoxPnlUpdateEmail.Size = new Size(127, 27);
+            textBoxPnlUpdateEmail.TabIndex = 8;
             // 
-            // textBoxPnlUpdateRoleDesc
+            // textBoxPnlUpdateName
             // 
-            textBoxPnlUpdateRoleDesc.Location = new Point(130, 94);
-            textBoxPnlUpdateRoleDesc.Margin = new Padding(2, 2, 2, 2);
-            textBoxPnlUpdateRoleDesc.Name = "textBoxPnlUpdateRoleDesc";
-            textBoxPnlUpdateRoleDesc.Size = new Size(127, 27);
-            textBoxPnlUpdateRoleDesc.TabIndex = 8;
-            // 
-            // textBoxPnlUpdateRoleName
-            // 
-            textBoxPnlUpdateRoleName.Location = new Point(130, 53);
-            textBoxPnlUpdateRoleName.Margin = new Padding(2, 2, 2, 2);
-            textBoxPnlUpdateRoleName.Name = "textBoxPnlUpdateRoleName";
-            textBoxPnlUpdateRoleName.Size = new Size(126, 27);
-            textBoxPnlUpdateRoleName.TabIndex = 5;
-            textBoxPnlUpdateRoleName.TextChanged += textBoxPnlUpdateRoleName_TextChanged;
+            textBoxPnlUpdateName.Location = new Point(130, 53);
+            textBoxPnlUpdateName.Margin = new Padding(2);
+            textBoxPnlUpdateName.Name = "textBoxPnlUpdateName";
+            textBoxPnlUpdateName.Size = new Size(126, 27);
+            textBoxPnlUpdateName.TabIndex = 5;
+            textBoxPnlUpdateName.TextChanged += textBoxPnlUpdateRoleName_TextChanged;
             // 
             // labelPnlUpdateDob
             // 
@@ -405,9 +407,9 @@
             labelPnlUpdateDob.Location = new Point(298, 57);
             labelPnlUpdateDob.Margin = new Padding(2, 0, 2, 0);
             labelPnlUpdateDob.Name = "labelPnlUpdateDob";
-            labelPnlUpdateDob.Size = new Size(38, 20);
+            labelPnlUpdateDob.Size = new Size(36, 20);
             labelPnlUpdateDob.TabIndex = 3;
-            labelPnlUpdateDob.Text = "Dob";
+            labelPnlUpdateDob.Text = "Age";
             // 
             // labelPnlUpdatePatientName
             // 
@@ -422,28 +424,19 @@
             // buttonPatientList
             // 
             buttonPatientList.Location = new Point(22, 167);
-            buttonPatientList.Margin = new Padding(2, 2, 2, 2);
+            buttonPatientList.Margin = new Padding(2);
             buttonPatientList.Name = "buttonPatientList";
             buttonPatientList.Size = new Size(102, 27);
             buttonPatientList.TabIndex = 30;
             buttonPatientList.Text = "Patient List";
             buttonPatientList.UseVisualStyleBackColor = true;
-            // 
-            // panelPatientList
-            // 
-            panelPatientList.Controls.Add(dataGridViewPatient);
-            panelPatientList.Location = new Point(0, 0);
-            panelPatientList.Margin = new Padding(2);
-            panelPatientList.Name = "panelPatientList";
-            panelPatientList.Size = new Size(562, 258);
-            panelPatientList.TabIndex = 31;
-            panelPatientList.Visible = false;
+            buttonPatientList.Click += PatientManagement_Load;
             // 
             // dataGridViewPatient
             // 
             dataGridViewPatient.AllowUserToOrderColumns = true;
             dataGridViewPatient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPatient.Location = new Point(17, 3);
+            dataGridViewPatient.Location = new Point(158, 113);
             dataGridViewPatient.Name = "dataGridViewPatient";
             dataGridViewPatient.RowHeadersWidth = 51;
             dataGridViewPatient.Size = new Size(559, 258);
@@ -454,7 +447,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panelUpdateRole);
+            Controls.Add(panelAddPatient);
+            Controls.Add(panelUpdatePatient);
             Controls.Add(buttonPatientList);
             Controls.Add(loggedUserEmail);
             Controls.Add(buttonLogout);
@@ -462,15 +456,15 @@
             Controls.Add(buttonDeletePatient);
             Controls.Add(buttonAddPatient);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Controls.Add(dataGridViewPatient);
+            Margin = new Padding(2);
             Name = "PatientManagement";
             Text = "PatientManagement";
             Load += PatientManagement_Load;
-            panelAddRole.ResumeLayout(false);
-            panelAddRole.PerformLayout();
-            panelUpdateRole.ResumeLayout(false);
-            panelUpdateRole.PerformLayout();
-            panelPatientList.ResumeLayout(false);
+            panelAddPatient.ResumeLayout(false);
+            panelAddPatient.PerformLayout();
+            panelUpdatePatient.ResumeLayout(false);
+            panelUpdatePatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPatient).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -496,30 +490,29 @@
         private Button buttonPnlEditCancel;
         private Button buttonPnlUpdate;
         private Label label3;
-        private Panel panelAddRole;
-        private Panel panelUpdateRole;
-        private TextBox textBoxPnlUpdateRoleDesc;
-        private TextBox textBoxPnlUpdateRoleName;
+        private Panel panelAddPatient;
+        private Panel panelUpdatePatient;
+        private TextBox textBoxPnlUpdateEmail;
+        private TextBox textBoxPnlUpdateName;
         private Label labelPnlUpdateDob;
         private Label labelPnlUpdatePatientName;
         private Button buttonPatientList;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBoxlabelPnlUpdateAddress;
+        private TextBox textBoxPnlUpdateAddress;
         private Label labelPnlUpdateAdress;
         private Label labelPnlUpdatePhone;
         private TextBox textBoxPnlUpdatePhone;
         private Label labelPnlUpdateEmail;
-        private TextBox textBox2;
+        private TextBox textBoxPnlAddAddress;
         private Label label5;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox textBoxPnlAddPhone;
         private Label label7;
-        private DateTimePicker dateTimePicker2;
-        private TextBox textBox4;
+        private TextBox textBoxPnlAddEmail;
         private TextBox textBoxPnlAddName;
         private Label label8;
         private Label labelPnlAddPatientName;
-        private Panel panelPatientList;
         private DataGridView dataGridViewPatient;
+        private DateTimePicker PnlAddDateTimePicker;
+        private DateTimePicker pnlUpdateDateTimePicker;
     }
 }

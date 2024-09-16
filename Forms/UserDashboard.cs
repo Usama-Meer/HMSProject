@@ -57,21 +57,32 @@ namespace HMSProject.Forms
 
         private void RoleManagement_Click(object sender, EventArgs e)
         {
+            Form form = new RoleManagement(userId, _context);
+            form.Show();
+            this.Hide();
 
         }
 
         private void PatientManagement_Click(object sender, EventArgs e)
         {
-
+            Form form = new PatientManagement(userId, _context);
+            form.Show();
+            this.Hide();
         }
 
         private void ReceptionistManagement_Click(object sender, EventArgs e)
         {
+            Form form = new ReceiptionistManagement(userId, _context);
+            form.Show();
+            this.Hide();
 
         }
 
         private void AppointmentManagemement_Click(object sender, EventArgs e)
         {
+            Form form = new AppointmentManagement(userId, _context);
+            form.Show();
+            this.Hide();
 
         }
     }

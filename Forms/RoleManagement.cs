@@ -56,6 +56,8 @@ namespace HMSProject.Forms
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
+            _context.SaveChanges();
+            _context.Dispose();
             Form LogoutForm = new LoginForm();
             LogoutForm.Show();
             this.Close();
@@ -69,7 +71,7 @@ namespace HMSProject.Forms
             {
                 RoleName = textBoxPnlAddRoleName.Text,
                 RoleDescription = textBoxPnlAddRoleDesc.Text,
-                RoleId = _context.Roles.FirstOrDefault(r => r.RoleName == textBoxPnlAddRoleName.Text).RoleId,
+ 
             };
 
 
@@ -86,10 +88,12 @@ namespace HMSProject.Forms
         private void AddRole_Click(object sender, EventArgs e)
         {
             buttonDeleteRole.Enabled = false;
-            buttonAddRole.Enabled = false;
+            buttonEditRole.Enabled = false;
+            
             panelAddRole.Visible = true;
             loggedUserEmail.Visible = true;
             label1.Visible = true;
+            buttonLogout.Visible = true;
 
             panelUpdateRole.Visible = false;
           
@@ -114,7 +118,7 @@ namespace HMSProject.Forms
 
 
 
-                    int Id = (int)dataGridViewRole.Rows[rowId].Cells["Id"].Value;
+                    int Id = (int)dataGridViewRole.Rows[rowId].Cells["RoleId"].Value;
 
 
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -122,9 +126,9 @@ namespace HMSProject.Forms
 
                     if (result == DialogResult.Yes)
                     {
-                        var user = _context.Roles.Find(Id);
+                        var role = _context.Roles.Find(Id);
 
-                        _context.Roles.Remove(user);
+                        _context.Roles.Remove(role);
                         _context.SaveChanges();
                         RoleManagement_Load(sender, e);
 
@@ -146,12 +150,12 @@ namespace HMSProject.Forms
 
         private void buttonPanelUpdateRole(object sender, EventArgs e)
         {
-            int roleId= (int)dataGridViewRole.SelectedRows[0].Cells["Id"].Value;
+            int roleId= (int)dataGridViewRole.SelectedRows[0].Cells["RoleId"].Value;
             var role = _context.Roles.FirstOrDefault(u => u.RoleId == roleId);
 
             role.RoleName = textBoxPnlUpdateRoleName.Text;
             role.RoleDescription = textBoxPnlUpdateRoleDesc.Text;
-            role.RoleId = _context.Roles.FirstOrDefault(r => r.RoleName == textBoxPnlUpdateRoleName.Text).RoleId;
+            
 
             _context.SaveChanges();
 
@@ -173,7 +177,7 @@ namespace HMSProject.Forms
                 if (rowId != null)
                 {
 
-                    int Id = (int)dataGridViewRole.Rows[rowId].Cells["Id"].Value;
+                    int Id = (int)dataGridViewRole.Rows[rowId].Cells["RoleId"].Value;
 
 
 
@@ -187,7 +191,7 @@ namespace HMSProject.Forms
                 }
                 else
                 {
-                    MessageBox.Show("No User has been selected!Please select a user.");
+                    MessageBox.Show("No Role has been selected!Please select a Role.");
                 }
 
 

@@ -28,112 +28,264 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonPatientList = new Button();
+            buttonDoctorList = new Button();
             panelUpdateDoctor = new Panel();
+            comboBoxPnlUpdateSpeciality = new ComboBox();
+            textBoxPnlUpdateFee = new TextBox();
+            comboBoxPnlUpdateQuali = new ComboBox();
+            label2 = new Label();
+            buttonPnlEditCancel = new Button();
+            textBoxPnlUpdateDesc = new TextBox();
+            buttonPnlUpdate = new Button();
+            label5 = new Label();
+            textBoxPnlUpdateName = new TextBox();
+            label6 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label8 = new Label();
+            textBoxPnlUpdateEmail = new TextBox();
+            label1 = new Label();
             panelAddDoctor = new Panel();
+            comboBoxPnlAddSpeciality = new ComboBox();
             labelPnlAddFee = new Label();
             textBoxPnlAddFee = new TextBox();
             comboBoxPnlAddQualif = new ComboBox();
             textBoxPnlAddDesc = new TextBox();
             labelPnlAddDesc = new Label();
             labelPnlAddSpeciality = new Label();
-            textBoxPnlAddSpeciality = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
+            textBoxPnlAddEmail = new TextBox();
             textBoxPnlAddName = new TextBox();
             labelPnlAddQualif = new Label();
             labelPnlAddPatientName = new Label();
             label3 = new Label();
             buttonPnlAddCancel = new Button();
             buttonPnlCreateUser = new Button();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            buttonPnlEditCancel = new Button();
-            textBox2 = new TextBox();
-            buttonPnlUpdate = new Button();
-            label5 = new Label();
-            textBox6 = new TextBox();
-            label6 = new Label();
-            label11 = new Label();
-            textBox3 = new TextBox();
-            label10 = new Label();
-            label8 = new Label();
-            textBox5 = new TextBox();
-            label1 = new Label();
-            label4 = new Label();
+            dataGridViewDoctor = new DataGridView();
+            loggedUserEmail = new Label();
             button1 = new Button();
-            button2 = new Button();
+            buttonEditDoctor = new Button();
             label9 = new Label();
             buttonDeleteDoctor = new Button();
             buttonAddDoctor = new Button();
-            panelDoctorList = new Panel();
-            dataGridViewDoctor = new DataGridView();
             panelUpdateDoctor.SuspendLayout();
             panelAddDoctor.SuspendLayout();
-            panelDoctorList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDoctor).BeginInit();
             SuspendLayout();
             // 
-            // buttonPatientList
+            // buttonDoctorList
             // 
-            buttonPatientList.Location = new Point(26, 190);
-            buttonPatientList.Margin = new Padding(2, 2, 2, 2);
-            buttonPatientList.Name = "buttonPatientList";
-            buttonPatientList.Size = new Size(102, 27);
-            buttonPatientList.TabIndex = 38;
-            buttonPatientList.Text = "Patient List";
-            buttonPatientList.UseVisualStyleBackColor = true;
+            buttonDoctorList.Location = new Point(26, 190);
+            buttonDoctorList.Margin = new Padding(2);
+            buttonDoctorList.Name = "buttonDoctorList";
+            buttonDoctorList.Size = new Size(102, 27);
+            buttonDoctorList.TabIndex = 38;
+            buttonDoctorList.Text = "Doctor List";
+            buttonDoctorList.UseVisualStyleBackColor = true;
+            buttonDoctorList.Click += DoctorManagement_Load;
             // 
             // panelUpdateDoctor
             // 
-            panelUpdateDoctor.Controls.Add(panelAddDoctor);
-            panelUpdateDoctor.Controls.Add(textBox1);
+            panelUpdateDoctor.Controls.Add(comboBoxPnlUpdateSpeciality);
+            panelUpdateDoctor.Controls.Add(textBoxPnlUpdateFee);
+            panelUpdateDoctor.Controls.Add(comboBoxPnlUpdateQuali);
             panelUpdateDoctor.Controls.Add(label2);
-            panelUpdateDoctor.Controls.Add(comboBox1);
             panelUpdateDoctor.Controls.Add(buttonPnlEditCancel);
-            panelUpdateDoctor.Controls.Add(textBox2);
+            panelUpdateDoctor.Controls.Add(textBoxPnlUpdateDesc);
             panelUpdateDoctor.Controls.Add(buttonPnlUpdate);
             panelUpdateDoctor.Controls.Add(label5);
-            panelUpdateDoctor.Controls.Add(textBox6);
+            panelUpdateDoctor.Controls.Add(textBoxPnlUpdateName);
             panelUpdateDoctor.Controls.Add(label6);
             panelUpdateDoctor.Controls.Add(label11);
-            panelUpdateDoctor.Controls.Add(textBox3);
             panelUpdateDoctor.Controls.Add(label10);
             panelUpdateDoctor.Controls.Add(label8);
-            panelUpdateDoctor.Controls.Add(textBox5);
+            panelUpdateDoctor.Controls.Add(textBoxPnlUpdateEmail);
             panelUpdateDoctor.Controls.Add(label1);
-            panelUpdateDoctor.Location = new Point(158, 143);
-            panelUpdateDoctor.Margin = new Padding(2, 2, 2, 2);
+            panelUpdateDoctor.Location = new Point(188, 167);
+            panelUpdateDoctor.Margin = new Padding(2);
             panelUpdateDoctor.Name = "panelUpdateDoctor";
-            panelUpdateDoctor.Size = new Size(562, 258);
+            panelUpdateDoctor.Size = new Size(562, 261);
             panelUpdateDoctor.TabIndex = 37;
             panelUpdateDoctor.Visible = false;
             // 
+            // comboBoxPnlUpdateSpeciality
+            // 
+            comboBoxPnlUpdateSpeciality.FormattingEnabled = true;
+            comboBoxPnlUpdateSpeciality.Items.AddRange(new object[] { "Cardiologist", "Dermatologist", "Neurologist", "Pediatrician", "Orthopedic Surgeon", "Psychiatrist", "Radiologist", "Oncologist", "Endocrinologist", "Gastroenterologist" });
+            comboBoxPnlUpdateSpeciality.Location = new Point(401, 113);
+            comboBoxPnlUpdateSpeciality.Margin = new Padding(2);
+            comboBoxPnlUpdateSpeciality.Name = "comboBoxPnlUpdateSpeciality";
+            comboBoxPnlUpdateSpeciality.Size = new Size(134, 28);
+            comboBoxPnlUpdateSpeciality.TabIndex = 37;
+            // 
+            // textBoxPnlUpdateFee
+            // 
+            textBoxPnlUpdateFee.Location = new Point(448, 153);
+            textBoxPnlUpdateFee.Margin = new Padding(2);
+            textBoxPnlUpdateFee.Name = "textBoxPnlUpdateFee";
+            textBoxPnlUpdateFee.Size = new Size(87, 27);
+            textBoxPnlUpdateFee.TabIndex = 51;
+            // 
+            // comboBoxPnlUpdateQuali
+            // 
+            comboBoxPnlUpdateQuali.FormattingEnabled = true;
+            comboBoxPnlUpdateQuali.Items.AddRange(new object[] { "MBBS:", "BDS: Bachelor of Dental Surgery", "MDS: Master of Dental Surgery", "BAMS: Bachelor of Ayurvedic Medicine and Surgery", "BHMS: Bachelor of Homeopathic Medicine and Surgery", "BPT: Bachelor of Physiotherapy", "MPT: Master of Physiotherapy" });
+            comboBoxPnlUpdateQuali.Location = new Point(400, 77);
+            comboBoxPnlUpdateQuali.Margin = new Padding(2);
+            comboBoxPnlUpdateQuali.Name = "comboBoxPnlUpdateQuali";
+            comboBoxPnlUpdateQuali.Size = new Size(134, 28);
+            comboBoxPnlUpdateQuali.TabIndex = 36;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F);
+            label2.Location = new Point(224, 12);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(123, 23);
+            label2.TabIndex = 14;
+            label2.Text = "Update Doctor";
+            // 
+            // buttonPnlEditCancel
+            // 
+            buttonPnlEditCancel.Location = new Point(190, 202);
+            buttonPnlEditCancel.Margin = new Padding(2);
+            buttonPnlEditCancel.Name = "buttonPnlEditCancel";
+            buttonPnlEditCancel.Size = new Size(90, 27);
+            buttonPnlEditCancel.TabIndex = 13;
+            buttonPnlEditCancel.Text = "Cancel";
+            buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            buttonPnlEditCancel.Click += DoctorManagement_Load;
+            // 
+            // textBoxPnlUpdateDesc
+            // 
+            textBoxPnlUpdateDesc.Location = new Point(133, 152);
+            textBoxPnlUpdateDesc.Margin = new Padding(2);
+            textBoxPnlUpdateDesc.Name = "textBoxPnlUpdateDesc";
+            textBoxPnlUpdateDesc.Size = new Size(221, 27);
+            textBoxPnlUpdateDesc.TabIndex = 49;
+            // 
+            // buttonPnlUpdate
+            // 
+            buttonPnlUpdate.Location = new Point(294, 202);
+            buttonPnlUpdate.Margin = new Padding(2);
+            buttonPnlUpdate.Name = "buttonPnlUpdate";
+            buttonPnlUpdate.Size = new Size(90, 27);
+            buttonPnlUpdate.TabIndex = 12;
+            buttonPnlUpdate.Text = "Update";
+            buttonPnlUpdate.UseVisualStyleBackColor = true;
+            buttonPnlUpdate.Click += buttonPanelUpdateDoctor;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(21, 154);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 20);
+            label5.TabIndex = 48;
+            label5.Text = "Description";
+            // 
+            // textBoxPnlUpdateName
+            // 
+            textBoxPnlUpdateName.Location = new Point(134, 73);
+            textBoxPnlUpdateName.Margin = new Padding(2);
+            textBoxPnlUpdateName.Name = "textBoxPnlUpdateName";
+            textBoxPnlUpdateName.Size = new Size(158, 27);
+            textBoxPnlUpdateName.TabIndex = 43;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(302, 114);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(73, 20);
+            label6.TabIndex = 47;
+            label6.Text = "Speciality";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(18, 75);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(99, 20);
+            label11.TabIndex = 41;
+            label11.Text = "Doctor Name";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(302, 77);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(94, 20);
+            label10.TabIndex = 42;
+            label10.Text = "Qualification";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(19, 119);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(96, 20);
+            label8.TabIndex = 45;
+            label8.Text = "Doctor Email";
+            // 
+            // textBoxPnlUpdateEmail
+            // 
+            textBoxPnlUpdateEmail.Location = new Point(134, 114);
+            textBoxPnlUpdateEmail.Margin = new Padding(2);
+            textBoxPnlUpdateEmail.Name = "textBoxPnlUpdateEmail";
+            textBoxPnlUpdateEmail.Size = new Size(158, 27);
+            textBoxPnlUpdateEmail.TabIndex = 44;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(376, 154);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(32, 20);
+            label1.TabIndex = 52;
+            label1.Text = "Fee";
+            // 
             // panelAddDoctor
             // 
-            panelAddDoctor.Controls.Add(panelDoctorList);
+            panelAddDoctor.Controls.Add(comboBoxPnlAddSpeciality);
             panelAddDoctor.Controls.Add(labelPnlAddFee);
             panelAddDoctor.Controls.Add(textBoxPnlAddFee);
             panelAddDoctor.Controls.Add(comboBoxPnlAddQualif);
             panelAddDoctor.Controls.Add(textBoxPnlAddDesc);
             panelAddDoctor.Controls.Add(labelPnlAddDesc);
             panelAddDoctor.Controls.Add(labelPnlAddSpeciality);
-            panelAddDoctor.Controls.Add(textBoxPnlAddSpeciality);
             panelAddDoctor.Controls.Add(label7);
-            panelAddDoctor.Controls.Add(textBox4);
+            panelAddDoctor.Controls.Add(textBoxPnlAddEmail);
             panelAddDoctor.Controls.Add(textBoxPnlAddName);
             panelAddDoctor.Controls.Add(labelPnlAddQualif);
             panelAddDoctor.Controls.Add(labelPnlAddPatientName);
             panelAddDoctor.Controls.Add(label3);
             panelAddDoctor.Controls.Add(buttonPnlAddCancel);
             panelAddDoctor.Controls.Add(buttonPnlCreateUser);
-            panelAddDoctor.Location = new Point(0, 0);
-            panelAddDoctor.Margin = new Padding(2, 2, 2, 2);
+            panelAddDoctor.Location = new Point(186, 168);
+            panelAddDoctor.Margin = new Padding(2);
             panelAddDoctor.Name = "panelAddDoctor";
             panelAddDoctor.Size = new Size(562, 258);
             panelAddDoctor.TabIndex = 29;
             panelAddDoctor.Visible = false;
+            // 
+            // comboBoxPnlAddSpeciality
+            // 
+            comboBoxPnlAddSpeciality.FormattingEnabled = true;
+            comboBoxPnlAddSpeciality.Items.AddRange(new object[] { "Cardiologist", "Dermatologist", "Neurologist", "Pediatrician", "Orthopedic Surgeon", "Psychiatrist", "Radiologist", "Oncologist", "Endocrinologist", "Gastroenterologist" });
+            comboBoxPnlAddSpeciality.Location = new Point(406, 113);
+            comboBoxPnlAddSpeciality.Margin = new Padding(2);
+            comboBoxPnlAddSpeciality.Name = "comboBoxPnlAddSpeciality";
+            comboBoxPnlAddSpeciality.Size = new Size(134, 28);
+            comboBoxPnlAddSpeciality.TabIndex = 35;
             // 
             // labelPnlAddFee
             // 
@@ -148,7 +300,7 @@
             // textBoxPnlAddFee
             // 
             textBoxPnlAddFee.Location = new Point(448, 154);
-            textBoxPnlAddFee.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlAddFee.Margin = new Padding(2);
             textBoxPnlAddFee.Name = "textBoxPnlAddFee";
             textBoxPnlAddFee.Size = new Size(88, 27);
             textBoxPnlAddFee.TabIndex = 33;
@@ -156,8 +308,9 @@
             // comboBoxPnlAddQualif
             // 
             comboBoxPnlAddQualif.FormattingEnabled = true;
+            comboBoxPnlAddQualif.Items.AddRange(new object[] { "MBBS:", "BDS: Bachelor of Dental Surgery", "MDS: Master of Dental Surgery", "BAMS: Bachelor of Ayurvedic Medicine and Surgery", "BHMS: Bachelor of Homeopathic Medicine and Surgery", "BPT: Bachelor of Physiotherapy", "MPT: Master of Physiotherapy" });
             comboBoxPnlAddQualif.Location = new Point(405, 77);
-            comboBoxPnlAddQualif.Margin = new Padding(2, 2, 2, 2);
+            comboBoxPnlAddQualif.Margin = new Padding(2);
             comboBoxPnlAddQualif.Name = "comboBoxPnlAddQualif";
             comboBoxPnlAddQualif.Size = new Size(134, 28);
             comboBoxPnlAddQualif.TabIndex = 32;
@@ -165,7 +318,7 @@
             // textBoxPnlAddDesc
             // 
             textBoxPnlAddDesc.Location = new Point(134, 154);
-            textBoxPnlAddDesc.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlAddDesc.Margin = new Padding(2);
             textBoxPnlAddDesc.Name = "textBoxPnlAddDesc";
             textBoxPnlAddDesc.Size = new Size(221, 27);
             textBoxPnlAddDesc.TabIndex = 30;
@@ -190,14 +343,6 @@
             labelPnlAddSpeciality.TabIndex = 28;
             labelPnlAddSpeciality.Text = "Speciality";
             // 
-            // textBoxPnlAddSpeciality
-            // 
-            textBoxPnlAddSpeciality.Location = new Point(405, 114);
-            textBoxPnlAddSpeciality.Margin = new Padding(2, 2, 2, 2);
-            textBoxPnlAddSpeciality.Name = "textBoxPnlAddSpeciality";
-            textBoxPnlAddSpeciality.Size = new Size(134, 27);
-            textBoxPnlAddSpeciality.TabIndex = 27;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -208,18 +353,18 @@
             label7.TabIndex = 26;
             label7.Text = "Doctor Email";
             // 
-            // textBox4
+            // textBoxPnlAddEmail
             // 
-            textBox4.Location = new Point(134, 116);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(158, 27);
-            textBox4.TabIndex = 24;
+            textBoxPnlAddEmail.Location = new Point(134, 116);
+            textBoxPnlAddEmail.Margin = new Padding(2);
+            textBoxPnlAddEmail.Name = "textBoxPnlAddEmail";
+            textBoxPnlAddEmail.Size = new Size(158, 27);
+            textBoxPnlAddEmail.TabIndex = 24;
             // 
             // textBoxPnlAddName
             // 
             textBoxPnlAddName.Location = new Point(134, 74);
-            textBoxPnlAddName.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlAddName.Margin = new Padding(2);
             textBoxPnlAddName.Name = "textBoxPnlAddName";
             textBoxPnlAddName.Size = new Size(158, 27);
             textBoxPnlAddName.TabIndex = 23;
@@ -258,171 +403,43 @@
             // buttonPnlAddCancel
             // 
             buttonPnlAddCancel.Location = new Point(196, 206);
-            buttonPnlAddCancel.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlAddCancel.Margin = new Padding(2);
             buttonPnlAddCancel.Name = "buttonPnlAddCancel";
             buttonPnlAddCancel.Size = new Size(90, 27);
             buttonPnlAddCancel.TabIndex = 13;
             buttonPnlAddCancel.Text = "Cancel";
             buttonPnlAddCancel.UseVisualStyleBackColor = true;
+            buttonPnlAddCancel.Click += DoctorManagement_Load;
             // 
             // buttonPnlCreateUser
             // 
             buttonPnlCreateUser.Location = new Point(298, 206);
-            buttonPnlCreateUser.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlCreateUser.Margin = new Padding(2);
             buttonPnlCreateUser.Name = "buttonPnlCreateUser";
             buttonPnlCreateUser.Size = new Size(90, 27);
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
+            buttonPnlCreateUser.Click += buttonPanelCreateDoctor;
             // 
-            // textBox1
+            // dataGridViewDoctor
             // 
-            textBox1.Location = new Point(448, 153);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(87, 27);
-            textBox1.TabIndex = 51;
+            dataGridViewDoctor.AllowUserToOrderColumns = true;
+            dataGridViewDoctor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewDoctor.Location = new Point(188, 167);
+            dataGridViewDoctor.Name = "dataGridViewDoctor";
+            dataGridViewDoctor.RowHeadersWidth = 51;
+            dataGridViewDoctor.Size = new Size(558, 261);
+            dataGridViewDoctor.TabIndex = 21;
             // 
-            // label2
+            // loggedUserEmail
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(224, 12);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 23);
-            label2.TabIndex = 14;
-            label2.Text = "Update Doctor";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(404, 75);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(134, 28);
-            comboBox1.TabIndex = 50;
-            // 
-            // buttonPnlEditCancel
-            // 
-            buttonPnlEditCancel.Location = new Point(190, 202);
-            buttonPnlEditCancel.Margin = new Padding(2, 2, 2, 2);
-            buttonPnlEditCancel.Name = "buttonPnlEditCancel";
-            buttonPnlEditCancel.Size = new Size(90, 27);
-            buttonPnlEditCancel.TabIndex = 13;
-            buttonPnlEditCancel.Text = "Cancel";
-            buttonPnlEditCancel.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(133, 152);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(221, 27);
-            textBox2.TabIndex = 49;
-            // 
-            // buttonPnlUpdate
-            // 
-            buttonPnlUpdate.Location = new Point(294, 202);
-            buttonPnlUpdate.Margin = new Padding(2, 2, 2, 2);
-            buttonPnlUpdate.Name = "buttonPnlUpdate";
-            buttonPnlUpdate.Size = new Size(90, 27);
-            buttonPnlUpdate.TabIndex = 12;
-            buttonPnlUpdate.Text = "Update";
-            buttonPnlUpdate.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(21, 154);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(85, 20);
-            label5.TabIndex = 48;
-            label5.Text = "Description";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(134, 73);
-            textBox6.Margin = new Padding(2, 2, 2, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(158, 27);
-            textBox6.TabIndex = 43;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(302, 114);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(73, 20);
-            label6.TabIndex = 47;
-            label6.Text = "Speciality";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(18, 75);
-            label11.Margin = new Padding(2, 0, 2, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(99, 20);
-            label11.TabIndex = 41;
-            label11.Text = "Doctor Name";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(404, 113);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(134, 27);
-            textBox3.TabIndex = 46;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(302, 77);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(94, 20);
-            label10.TabIndex = 42;
-            label10.Text = "Qualification";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(19, 119);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(96, 20);
-            label8.TabIndex = 45;
-            label8.Text = "Doctor Email";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(134, 114);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(158, 27);
-            textBox5.TabIndex = 44;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(376, 154);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(32, 20);
-            label1.TabIndex = 52;
-            label1.Text = "Fee";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(586, 54);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 20);
-            label4.TabIndex = 36;
-            label4.Text = "{User Email}";
+            loggedUserEmail.AutoSize = true;
+            loggedUserEmail.Location = new Point(586, 54);
+            loggedUserEmail.Name = "loggedUserEmail";
+            loggedUserEmail.Size = new Size(89, 20);
+            loggedUserEmail.TabIndex = 36;
+            loggedUserEmail.Text = "{User Email}";
             // 
             // button1
             // 
@@ -432,16 +449,18 @@
             button1.TabIndex = 35;
             button1.Text = "Logout";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonLogout_Click;
             // 
-            // button2
+            // buttonEditDoctor
             // 
-            button2.Location = new Point(26, 314);
-            button2.Margin = new Padding(2, 2, 2, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 27);
-            button2.TabIndex = 34;
-            button2.Text = "Edit Patient";
-            button2.UseVisualStyleBackColor = true;
+            buttonEditDoctor.Location = new Point(26, 314);
+            buttonEditDoctor.Margin = new Padding(2);
+            buttonEditDoctor.Name = "buttonEditDoctor";
+            buttonEditDoctor.Size = new Size(102, 27);
+            buttonEditDoctor.TabIndex = 34;
+            buttonEditDoctor.Text = "Edit Doctor";
+            buttonEditDoctor.UseVisualStyleBackColor = true;
+            buttonEditDoctor.Click += EditDoctor_Click;
             // 
             // label9
             // 
@@ -457,80 +476,63 @@
             // buttonDeleteDoctor
             // 
             buttonDeleteDoctor.Location = new Point(26, 272);
-            buttonDeleteDoctor.Margin = new Padding(2, 2, 2, 2);
+            buttonDeleteDoctor.Margin = new Padding(2);
             buttonDeleteDoctor.Name = "buttonDeleteDoctor";
             buttonDeleteDoctor.Size = new Size(102, 27);
             buttonDeleteDoctor.TabIndex = 39;
             buttonDeleteDoctor.Text = "Delete Doctor";
             buttonDeleteDoctor.UseVisualStyleBackColor = true;
+            buttonDeleteDoctor.Click += DeleteDoctor_Click;
             // 
             // buttonAddDoctor
             // 
             buttonAddDoctor.Location = new Point(26, 230);
-            buttonAddDoctor.Margin = new Padding(2, 2, 2, 2);
+            buttonAddDoctor.Margin = new Padding(2);
             buttonAddDoctor.Name = "buttonAddDoctor";
             buttonAddDoctor.Size = new Size(102, 27);
             buttonAddDoctor.TabIndex = 40;
             buttonAddDoctor.Text = "Add Doctor";
             buttonAddDoctor.UseVisualStyleBackColor = true;
-            // 
-            // panelDoctorList
-            // 
-            panelDoctorList.Controls.Add(dataGridViewDoctor);
-            panelDoctorList.Location = new Point(0, 2);
-            panelDoctorList.Margin = new Padding(2);
-            panelDoctorList.Name = "panelDoctorList";
-            panelDoctorList.Size = new Size(562, 258);
-            panelDoctorList.TabIndex = 41;
-            panelDoctorList.Visible = false;
-            // 
-            // dataGridViewDoctor
-            // 
-            dataGridViewDoctor.AllowUserToOrderColumns = true;
-            dataGridViewDoctor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDoctor.Location = new Point(4, 1);
-            dataGridViewDoctor.Name = "dataGridViewDoctor";
-            dataGridViewDoctor.RowHeadersWidth = 51;
-            dataGridViewDoctor.Size = new Size(558, 261);
-            dataGridViewDoctor.TabIndex = 21;
+            buttonAddDoctor.Click += AddDoctor_Click;
             // 
             // DoctorManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelAddDoctor);
             Controls.Add(buttonAddDoctor);
-            Controls.Add(buttonPatientList);
+            Controls.Add(buttonDoctorList);
             Controls.Add(panelUpdateDoctor);
-            Controls.Add(label4);
+            Controls.Add(loggedUserEmail);
             Controls.Add(button1);
             Controls.Add(label9);
             Controls.Add(buttonDeleteDoctor);
-            Controls.Add(button2);
-            Margin = new Padding(2, 2, 2, 2);
+            Controls.Add(buttonEditDoctor);
+            Controls.Add(dataGridViewDoctor);
+            Margin = new Padding(2);
             Name = "DoctorManagement";
             Text = "DoctorManagement";
+            Load += DoctorManagement_Load;
             panelUpdateDoctor.ResumeLayout(false);
             panelUpdateDoctor.PerformLayout();
             panelAddDoctor.ResumeLayout(false);
             panelAddDoctor.PerformLayout();
-            panelDoctorList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewDoctor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button buttonPatientList;
+        private Button buttonDoctorList;
         private Panel panelUpdateDoctor;
         private Panel panelAddDoctor;
         private TextBox textBoxPnlAddDesc;
         private Label labelPnlAddDesc;
         private Label labelPnlAddSpeciality;
-        private TextBox textBoxPnlAddSpeciality;
         private Label label7;
         private DateTimePicker dateTimePicker2;
-        private TextBox textBox4;
+        private TextBox textBoxPnlAddEmail;
         private TextBox textBoxPnlAddName;
         private Label labelPnlAddQualif;
         private Label labelPnlAddPatientName;
@@ -540,28 +542,28 @@
         private Label label2;
         private Button buttonPnlEditCancel;
         private Button buttonPnlUpdate;
-        private Label label4;
+        private Label loggedUserEmail;
         private Button button1;
-        private Button button2;
+        private Button buttonEditDoctor;
         private Label label9;
         private Button buttonDeleteDoctor;
         private Button buttonAddDoctor;
         private ComboBox comboBoxPnlAddQualif;
         private Label labelPnlAddFee;
         private TextBox textBoxPnlAddFee;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private TextBox textBoxPnlUpdateFee;
+        private TextBox textBoxPnlUpdateDesc;
         private Label label5;
-        private TextBox textBox6;
+        private TextBox textBoxPnlUpdateName;
         private Label label6;
         private Label label11;
-        private TextBox textBox3;
         private Label label10;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox textBoxPnlUpdateEmail;
         private Label label1;
-        private Panel panelDoctorList;
         private DataGridView dataGridViewDoctor;
+        private ComboBox comboBoxPnlAddSpeciality;
+        private ComboBox comboBoxPnlUpdateSpeciality;
+        private ComboBox comboBoxPnlUpdateQuali;
     }
 }

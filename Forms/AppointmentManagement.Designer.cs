@@ -37,7 +37,7 @@
             comboBoxPnlAddDName = new ComboBox();
             dateTimePickerPnlAdd = new DateTimePicker();
             label7 = new Label();
-            textBoxPnlAddEmail = new TextBox();
+            textBoxPnlAddPEmail = new TextBox();
             textBoxPnlAddPName = new TextBox();
             label8 = new Label();
             label9 = new Label();
@@ -58,18 +58,16 @@
             textBoxPnlUpdateName = new TextBox();
             labelPnlUpdateAppointEmail = new Label();
             labelPnlUpdateReceptName = new Label();
+            dataGridViewAppointment = new DataGridView();
             buttonAppointmentList = new Button();
             buttonEditAppointment = new Button();
             buttonDeleteAppointment = new Button();
             buttonAddAppointment = new Button();
             doctorBindingSource = new BindingSource(components);
-            panelAppointmentList = new Panel();
-            dataGridViewAppointment = new DataGridView();
             panelAddAppointment.SuspendLayout();
             panelUpdateAppoint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
-            panelAppointmentList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppointment).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).BeginInit();
             SuspendLayout();
             // 
             // loggedUserEmail
@@ -108,17 +106,17 @@
             panelAddAppointment.Controls.Add(comboBoxPnlAddDName);
             panelAddAppointment.Controls.Add(dateTimePickerPnlAdd);
             panelAddAppointment.Controls.Add(label7);
-            panelAddAppointment.Controls.Add(textBoxPnlAddEmail);
+            panelAddAppointment.Controls.Add(textBoxPnlAddPEmail);
             panelAddAppointment.Controls.Add(textBoxPnlAddPName);
             panelAddAppointment.Controls.Add(label8);
             panelAddAppointment.Controls.Add(label9);
             panelAddAppointment.Controls.Add(buttonPnlAddCancel);
             panelAddAppointment.Controls.Add(buttonPnlCreateUser);
             panelAddAppointment.Controls.Add(label3);
-            panelAddAppointment.Location = new Point(191, 98);
+            panelAddAppointment.Location = new Point(176, 98);
             panelAddAppointment.Margin = new Padding(2);
             panelAddAppointment.Name = "panelAddAppointment";
-            panelAddAppointment.Size = new Size(562, 254);
+            panelAddAppointment.Size = new Size(562, 273);
             panelAddAppointment.TabIndex = 34;
             panelAddAppointment.Visible = false;
             // 
@@ -159,13 +157,13 @@
             label7.TabIndex = 27;
             label7.Text = "Date";
             // 
-            // textBoxPnlAddEmail
+            // textBoxPnlAddPEmail
             // 
-            textBoxPnlAddEmail.Location = new Point(218, 82);
-            textBoxPnlAddEmail.Margin = new Padding(2);
-            textBoxPnlAddEmail.Name = "textBoxPnlAddEmail";
-            textBoxPnlAddEmail.Size = new Size(260, 27);
-            textBoxPnlAddEmail.TabIndex = 25;
+            textBoxPnlAddPEmail.Location = new Point(218, 82);
+            textBoxPnlAddPEmail.Margin = new Padding(2);
+            textBoxPnlAddPEmail.Name = "textBoxPnlAddPEmail";
+            textBoxPnlAddPEmail.Size = new Size(260, 27);
+            textBoxPnlAddPEmail.TabIndex = 25;
             // 
             // textBoxPnlAddPName
             // 
@@ -204,6 +202,7 @@
             buttonPnlAddCancel.TabIndex = 13;
             buttonPnlAddCancel.Text = "Cancel";
             buttonPnlAddCancel.UseVisualStyleBackColor = true;
+            buttonPnlAddCancel.Click += AppointmentManagement_Load;
             // 
             // buttonPnlCreateUser
             // 
@@ -214,6 +213,7 @@
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
+            buttonPnlCreateUser.Click += panelButtonAddAppointment;
             // 
             // label3
             // 
@@ -228,7 +228,6 @@
             // 
             // panelUpdateAppoint
             // 
-            panelUpdateAppoint.Controls.Add(panelAppointmentList);
             panelUpdateAppoint.Controls.Add(label6);
             panelUpdateAppoint.Controls.Add(comboBoxPnlUpdateDName);
             panelUpdateAppoint.Controls.Add(comboBoxPnlUpdateStatus);
@@ -242,10 +241,10 @@
             panelUpdateAppoint.Controls.Add(textBoxPnlUpdateName);
             panelUpdateAppoint.Controls.Add(labelPnlUpdateAppointEmail);
             panelUpdateAppoint.Controls.Add(labelPnlUpdateReceptName);
-            panelUpdateAppoint.Location = new Point(189, 98);
+            panelUpdateAppoint.Location = new Point(174, 100);
             panelUpdateAppoint.Margin = new Padding(2);
             panelUpdateAppoint.Name = "panelUpdateAppoint";
-            panelUpdateAppoint.Size = new Size(562, 258);
+            panelUpdateAppoint.Size = new Size(562, 271);
             panelUpdateAppoint.TabIndex = 19;
             panelUpdateAppoint.Visible = false;
             // 
@@ -271,7 +270,7 @@
             // comboBoxPnlUpdateStatus
             // 
             comboBoxPnlUpdateStatus.FormattingEnabled = true;
-            comboBoxPnlUpdateStatus.Items.AddRange(new object[] { "Active", "Inactive" });
+            comboBoxPnlUpdateStatus.Items.AddRange(new object[] { "Active", "Expired" });
             comboBoxPnlUpdateStatus.Location = new Point(179, 164);
             comboBoxPnlUpdateStatus.Margin = new Padding(2);
             comboBoxPnlUpdateStatus.Name = "comboBoxPnlUpdateStatus";
@@ -326,6 +325,7 @@
             buttonPnlEditCancel.TabIndex = 13;
             buttonPnlEditCancel.Text = "Cancel";
             buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            buttonPnlEditCancel.Click += AppointmentManagement_Load;
             // 
             // buttonPnlUpdate
             // 
@@ -336,6 +336,7 @@
             buttonPnlUpdate.TabIndex = 12;
             buttonPnlUpdate.Text = "Update";
             buttonPnlUpdate.UseVisualStyleBackColor = true;
+            buttonPnlUpdate.Click += panelButtonUpdateAppointment;
             // 
             // textBoxPnlUpdateEmail
             // 
@@ -373,6 +374,16 @@
             labelPnlUpdateReceptName.TabIndex = 0;
             labelPnlUpdateReceptName.Text = "Patient Name";
             // 
+            // dataGridViewAppointment
+            // 
+            dataGridViewAppointment.AllowUserToOrderColumns = true;
+            dataGridViewAppointment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAppointment.Location = new Point(177, 98);
+            dataGridViewAppointment.Name = "dataGridViewAppointment";
+            dataGridViewAppointment.RowHeadersWidth = 51;
+            dataGridViewAppointment.Size = new Size(559, 258);
+            dataGridViewAppointment.TabIndex = 21;
+            // 
             // buttonAppointmentList
             // 
             buttonAppointmentList.Location = new Point(47, 127);
@@ -382,6 +393,7 @@
             buttonAppointmentList.TabIndex = 35;
             buttonAppointmentList.Text = "Appoint. List";
             buttonAppointmentList.UseVisualStyleBackColor = true;
+            buttonAppointmentList.Click += AppointmentManagement_Load;
             // 
             // buttonEditAppointment
             // 
@@ -392,6 +404,7 @@
             buttonEditAppointment.TabIndex = 33;
             buttonEditAppointment.Text = "Edit Appoint.";
             buttonEditAppointment.UseVisualStyleBackColor = true;
+            buttonEditAppointment.Click += buttonEditAppointment_Click;
             // 
             // buttonDeleteAppointment
             // 
@@ -402,6 +415,7 @@
             buttonDeleteAppointment.TabIndex = 32;
             buttonDeleteAppointment.Text = "Delete Appoint.";
             buttonDeleteAppointment.UseVisualStyleBackColor = true;
+            buttonDeleteAppointment.Click += buttonDeleteAppointment_Click;
             // 
             // buttonAddAppointment
             // 
@@ -412,30 +426,11 @@
             buttonAddAppointment.TabIndex = 31;
             buttonAddAppointment.Text = "Add Appoint.";
             buttonAddAppointment.UseVisualStyleBackColor = true;
+            buttonAddAppointment.Click += buttonAddAppointment_Click;
             // 
             // doctorBindingSource
             // 
             doctorBindingSource.DataSource = typeof(Models.Doctor);
-            // 
-            // panelAppointmentList
-            // 
-            panelAppointmentList.Controls.Add(dataGridViewAppointment);
-            panelAppointmentList.Location = new Point(1, 2);
-            panelAppointmentList.Margin = new Padding(2);
-            panelAppointmentList.Name = "panelAppointmentList";
-            panelAppointmentList.Size = new Size(562, 258);
-            panelAppointmentList.TabIndex = 36;
-            panelAppointmentList.Visible = false;
-            // 
-            // dataGridViewAppointment
-            // 
-            dataGridViewAppointment.AllowUserToOrderColumns = true;
-            dataGridViewAppointment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAppointment.Location = new Point(17, 3);
-            dataGridViewAppointment.Name = "dataGridViewAppointment";
-            dataGridViewAppointment.RowHeadersWidth = 51;
-            dataGridViewAppointment.Size = new Size(559, 258);
-            dataGridViewAppointment.TabIndex = 21;
             // 
             // AppointmentManagement
             // 
@@ -451,16 +446,17 @@
             Controls.Add(loggedUserEmail);
             Controls.Add(buttonLogout);
             Controls.Add(label1);
+            Controls.Add(dataGridViewAppointment);
             Margin = new Padding(2);
             Name = "AppointmentManagement";
             Text = "AppointmentManagement";
+            Load += AppointmentManagement_Load;
             panelAddAppointment.ResumeLayout(false);
             panelAddAppointment.PerformLayout();
             panelUpdateAppoint.ResumeLayout(false);
             panelUpdateAppoint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).EndInit();
-            panelAppointmentList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewAppointment).EndInit();
+            ((System.ComponentModel.ISupportInitialize)doctorBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -476,7 +472,7 @@
         private Label label2;
         private Button buttonPnlEditCancel;
         private Button buttonPnlUpdate;
-        private TextBox textBoxPnlAddEmail;
+        private TextBox textBoxPnlAddPEmail;
         private TextBox textBoxPnlUpdateEmail;
         private TextBox textBoxPnlUpdateName;
         private Label labelPnlUpdateAppointEmail;
@@ -503,7 +499,6 @@
         private Label label7;
         private Label label6;
         private ComboBox comboBoxPnlUpdateDName;
-        private Panel panelAppointmentList;
         private DataGridView dataGridViewAppointment;
     }
 }

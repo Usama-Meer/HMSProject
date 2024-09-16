@@ -31,38 +31,36 @@
             buttonPnlAddCancel = new Button();
             buttonPnlCreateUser = new Button();
             textBoxPnlAddEmail = new TextBox();
-            TextBoxPnlAddName = new TextBox();
+            textBoxPnlAddName = new TextBox();
             labelPnlAddReceptEmail = new Label();
             labelPnlAddReceptName = new Label();
             label2 = new Label();
             buttonPnlEditCancel = new Button();
             buttonPnlUpdate = new Button();
             label3 = new Label();
-            panelAddRole = new Panel();
+            panelAddRecept = new Panel();
             panelUpdateRecept = new Panel();
             textBoxPnlUpdateEmail = new TextBox();
             textBoxPnlUpdateName = new TextBox();
             labelPnlUpdateReceptEmail = new Label();
             labelPnlUpdateReceptName = new Label();
-            buttonRoleList = new Button();
+            dataGridViewRecept = new DataGridView();
+            buttonReceptList = new Button();
             buttonLogout = new Button();
-            buttonEditRole = new Button();
-            buttonDeleteRole = new Button();
-            buttonAddRole = new Button();
+            buttonEditRecept = new Button();
+            buttonDeleteRecept = new Button();
+            buttonReceptRole = new Button();
             label1 = new Label();
             loggedUserEmail = new Label();
-            panelReceptList = new Panel();
-            dataGridViewRecept = new DataGridView();
-            panelAddRole.SuspendLayout();
+            panelAddRecept.SuspendLayout();
             panelUpdateRecept.SuspendLayout();
-            panelReceptList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRecept).BeginInit();
             SuspendLayout();
             // 
             // buttonPnlAddCancel
             // 
             buttonPnlAddCancel.Location = new Point(196, 206);
-            buttonPnlAddCancel.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlAddCancel.Margin = new Padding(2);
             buttonPnlAddCancel.Name = "buttonPnlAddCancel";
             buttonPnlAddCancel.Size = new Size(90, 27);
             buttonPnlAddCancel.TabIndex = 13;
@@ -72,28 +70,29 @@
             // buttonPnlCreateUser
             // 
             buttonPnlCreateUser.Location = new Point(298, 206);
-            buttonPnlCreateUser.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlCreateUser.Margin = new Padding(2);
             buttonPnlCreateUser.Name = "buttonPnlCreateUser";
             buttonPnlCreateUser.Size = new Size(90, 27);
             buttonPnlCreateUser.TabIndex = 12;
             buttonPnlCreateUser.Text = "Create";
             buttonPnlCreateUser.UseVisualStyleBackColor = true;
+            buttonPnlCreateUser.Click += buttonPanelCreate;
             // 
             // textBoxPnlAddEmail
             // 
             textBoxPnlAddEmail.Location = new Point(254, 107);
-            textBoxPnlAddEmail.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlAddEmail.Margin = new Padding(2);
             textBoxPnlAddEmail.Name = "textBoxPnlAddEmail";
             textBoxPnlAddEmail.Size = new Size(220, 27);
             textBoxPnlAddEmail.TabIndex = 8;
             // 
-            // TextBoxPnlAddName
+            // textBoxPnlAddName
             // 
-            TextBoxPnlAddName.Location = new Point(254, 57);
-            TextBoxPnlAddName.Margin = new Padding(2, 2, 2, 2);
-            TextBoxPnlAddName.Name = "TextBoxPnlAddName";
-            TextBoxPnlAddName.Size = new Size(220, 27);
-            TextBoxPnlAddName.TabIndex = 5;
+            textBoxPnlAddName.Location = new Point(254, 57);
+            textBoxPnlAddName.Margin = new Padding(2);
+            textBoxPnlAddName.Name = "textBoxPnlAddName";
+            textBoxPnlAddName.Size = new Size(220, 27);
+            textBoxPnlAddName.TabIndex = 5;
             // 
             // labelPnlAddReceptEmail
             // 
@@ -129,22 +128,24 @@
             // buttonPnlEditCancel
             // 
             buttonPnlEditCancel.Location = new Point(190, 202);
-            buttonPnlEditCancel.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlEditCancel.Margin = new Padding(2);
             buttonPnlEditCancel.Name = "buttonPnlEditCancel";
             buttonPnlEditCancel.Size = new Size(90, 27);
             buttonPnlEditCancel.TabIndex = 13;
             buttonPnlEditCancel.Text = "Cancel";
             buttonPnlEditCancel.UseVisualStyleBackColor = true;
+            buttonPnlEditCancel.Click += ReceiptionistManagement_Load;
             // 
             // buttonPnlUpdate
             // 
             buttonPnlUpdate.Location = new Point(294, 202);
-            buttonPnlUpdate.Margin = new Padding(2, 2, 2, 2);
+            buttonPnlUpdate.Margin = new Padding(2);
             buttonPnlUpdate.Name = "buttonPnlUpdate";
             buttonPnlUpdate.Size = new Size(90, 27);
             buttonPnlUpdate.TabIndex = 12;
             buttonPnlUpdate.Text = "Update";
             buttonPnlUpdate.UseVisualStyleBackColor = true;
+            buttonPnlUpdate.Click += buttonPanelUpdate;
             // 
             // label3
             // 
@@ -157,26 +158,24 @@
             label3.TabIndex = 14;
             label3.Text = "Add New Receptionist";
             // 
-            // panelAddRole
+            // panelAddRecept
             // 
-            panelAddRole.Controls.Add(label3);
-            panelAddRole.Controls.Add(panelUpdateRecept);
-            panelAddRole.Controls.Add(buttonPnlAddCancel);
-            panelAddRole.Controls.Add(buttonPnlCreateUser);
-            panelAddRole.Controls.Add(textBoxPnlAddEmail);
-            panelAddRole.Controls.Add(TextBoxPnlAddName);
-            panelAddRole.Controls.Add(labelPnlAddReceptEmail);
-            panelAddRole.Controls.Add(labelPnlAddReceptName);
-            panelAddRole.Location = new Point(166, 138);
-            panelAddRole.Margin = new Padding(2, 2, 2, 2);
-            panelAddRole.Name = "panelAddRole";
-            panelAddRole.Size = new Size(562, 254);
-            panelAddRole.TabIndex = 29;
-            panelAddRole.Visible = false;
+            panelAddRecept.Controls.Add(label3);
+            panelAddRecept.Controls.Add(buttonPnlAddCancel);
+            panelAddRecept.Controls.Add(buttonPnlCreateUser);
+            panelAddRecept.Controls.Add(textBoxPnlAddEmail);
+            panelAddRecept.Controls.Add(textBoxPnlAddName);
+            panelAddRecept.Controls.Add(labelPnlAddReceptEmail);
+            panelAddRecept.Controls.Add(labelPnlAddReceptName);
+            panelAddRecept.Location = new Point(167, 135);
+            panelAddRecept.Margin = new Padding(2);
+            panelAddRecept.Name = "panelAddRecept";
+            panelAddRecept.Size = new Size(562, 258);
+            panelAddRecept.TabIndex = 29;
+            panelAddRecept.Visible = false;
             // 
             // panelUpdateRecept
             // 
-            panelUpdateRecept.Controls.Add(panelReceptList);
             panelUpdateRecept.Controls.Add(label2);
             panelUpdateRecept.Controls.Add(buttonPnlEditCancel);
             panelUpdateRecept.Controls.Add(buttonPnlUpdate);
@@ -184,17 +183,17 @@
             panelUpdateRecept.Controls.Add(textBoxPnlUpdateName);
             panelUpdateRecept.Controls.Add(labelPnlUpdateReceptEmail);
             panelUpdateRecept.Controls.Add(labelPnlUpdateReceptName);
-            panelUpdateRecept.Location = new Point(0, 0);
-            panelUpdateRecept.Margin = new Padding(2, 2, 2, 2);
+            panelUpdateRecept.Location = new Point(167, 135);
+            panelUpdateRecept.Margin = new Padding(2);
             panelUpdateRecept.Name = "panelUpdateRecept";
-            panelUpdateRecept.Size = new Size(562, 258);
+            panelUpdateRecept.Size = new Size(562, 260);
             panelUpdateRecept.TabIndex = 19;
             panelUpdateRecept.Visible = false;
             // 
             // textBoxPnlUpdateEmail
             // 
             textBoxPnlUpdateEmail.Location = new Point(264, 125);
-            textBoxPnlUpdateEmail.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlUpdateEmail.Margin = new Padding(2);
             textBoxPnlUpdateEmail.Name = "textBoxPnlUpdateEmail";
             textBoxPnlUpdateEmail.Size = new Size(220, 27);
             textBoxPnlUpdateEmail.TabIndex = 8;
@@ -202,7 +201,7 @@
             // textBoxPnlUpdateName
             // 
             textBoxPnlUpdateName.Location = new Point(262, 74);
-            textBoxPnlUpdateName.Margin = new Padding(2, 2, 2, 2);
+            textBoxPnlUpdateName.Margin = new Padding(2);
             textBoxPnlUpdateName.Name = "textBoxPnlUpdateName";
             textBoxPnlUpdateName.Size = new Size(220, 27);
             textBoxPnlUpdateName.TabIndex = 5;
@@ -227,15 +226,26 @@
             labelPnlUpdateReceptName.TabIndex = 0;
             labelPnlUpdateReceptName.Text = "Receptionist Name";
             // 
-            // buttonRoleList
+            // dataGridViewRecept
             // 
-            buttonRoleList.Location = new Point(22, 167);
-            buttonRoleList.Margin = new Padding(2, 2, 2, 2);
-            buttonRoleList.Name = "buttonRoleList";
-            buttonRoleList.Size = new Size(102, 27);
-            buttonRoleList.TabIndex = 30;
-            buttonRoleList.Text = "Recept. List";
-            buttonRoleList.UseVisualStyleBackColor = true;
+            dataGridViewRecept.AllowUserToOrderColumns = true;
+            dataGridViewRecept.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewRecept.Location = new Point(167, 135);
+            dataGridViewRecept.Name = "dataGridViewRecept";
+            dataGridViewRecept.RowHeadersWidth = 51;
+            dataGridViewRecept.Size = new Size(559, 258);
+            dataGridViewRecept.TabIndex = 21;
+            // 
+            // buttonReceptList
+            // 
+            buttonReceptList.Location = new Point(22, 167);
+            buttonReceptList.Margin = new Padding(2);
+            buttonReceptList.Name = "buttonReceptList";
+            buttonReceptList.Size = new Size(102, 27);
+            buttonReceptList.TabIndex = 30;
+            buttonReceptList.Text = "Recept. List";
+            buttonReceptList.UseVisualStyleBackColor = true;
+            buttonReceptList.Click += ReceiptionistManagement_Load;
             // 
             // buttonLogout
             // 
@@ -248,35 +258,38 @@
             buttonLogout.UseVisualStyleBackColor = true;
             buttonLogout.Click += buttonLogout_Click;
             // 
-            // buttonEditRole
+            // buttonEditRecept
             // 
-            buttonEditRole.Location = new Point(22, 290);
-            buttonEditRole.Margin = new Padding(2, 2, 2, 2);
-            buttonEditRole.Name = "buttonEditRole";
-            buttonEditRole.Size = new Size(102, 27);
-            buttonEditRole.TabIndex = 26;
-            buttonEditRole.Text = "Edit Recept.";
-            buttonEditRole.UseVisualStyleBackColor = true;
+            buttonEditRecept.Location = new Point(22, 290);
+            buttonEditRecept.Margin = new Padding(2);
+            buttonEditRecept.Name = "buttonEditRecept";
+            buttonEditRecept.Size = new Size(102, 27);
+            buttonEditRecept.TabIndex = 26;
+            buttonEditRecept.Text = "Edit Recept.";
+            buttonEditRecept.UseVisualStyleBackColor = true;
+            buttonEditRecept.Click += buttonEditRecept_Click;
             // 
-            // buttonDeleteRole
+            // buttonDeleteRecept
             // 
-            buttonDeleteRole.Location = new Point(22, 250);
-            buttonDeleteRole.Margin = new Padding(2, 2, 2, 2);
-            buttonDeleteRole.Name = "buttonDeleteRole";
-            buttonDeleteRole.Size = new Size(102, 27);
-            buttonDeleteRole.TabIndex = 25;
-            buttonDeleteRole.Text = "Delete Recept.";
-            buttonDeleteRole.UseVisualStyleBackColor = true;
+            buttonDeleteRecept.Location = new Point(22, 250);
+            buttonDeleteRecept.Margin = new Padding(2);
+            buttonDeleteRecept.Name = "buttonDeleteRecept";
+            buttonDeleteRecept.Size = new Size(102, 27);
+            buttonDeleteRecept.TabIndex = 25;
+            buttonDeleteRecept.Text = "Delete Recept.";
+            buttonDeleteRecept.UseVisualStyleBackColor = true;
+            buttonDeleteRecept.Click += buttonDeleteRecept_Click;
             // 
-            // buttonAddRole
+            // buttonReceptRole
             // 
-            buttonAddRole.Location = new Point(22, 210);
-            buttonAddRole.Margin = new Padding(2, 2, 2, 2);
-            buttonAddRole.Name = "buttonAddRole";
-            buttonAddRole.Size = new Size(102, 27);
-            buttonAddRole.TabIndex = 24;
-            buttonAddRole.Text = "Add Recept.";
-            buttonAddRole.UseVisualStyleBackColor = true;
+            buttonReceptRole.Location = new Point(22, 210);
+            buttonReceptRole.Margin = new Padding(2);
+            buttonReceptRole.Name = "buttonReceptRole";
+            buttonReceptRole.Size = new Size(102, 27);
+            buttonReceptRole.TabIndex = 24;
+            buttonReceptRole.Text = "Add Recept.";
+            buttonReceptRole.UseVisualStyleBackColor = true;
+            buttonReceptRole.Click += buttonAddRecept_Click;
             // 
             // label1
             // 
@@ -299,47 +312,29 @@
             loggedUserEmail.TabIndex = 28;
             loggedUserEmail.Text = "{User Email}";
             // 
-            // panelReceptList
-            // 
-            panelReceptList.Controls.Add(dataGridViewRecept);
-            panelReceptList.Location = new Point(2, 0);
-            panelReceptList.Margin = new Padding(2);
-            panelReceptList.Name = "panelReceptList";
-            panelReceptList.Size = new Size(562, 258);
-            panelReceptList.TabIndex = 31;
-            panelReceptList.Visible = false;
-            // 
-            // dataGridViewRecept
-            // 
-            dataGridViewRecept.AllowUserToOrderColumns = true;
-            dataGridViewRecept.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewRecept.Location = new Point(17, 3);
-            dataGridViewRecept.Name = "dataGridViewRecept";
-            dataGridViewRecept.RowHeadersWidth = 51;
-            dataGridViewRecept.Size = new Size(559, 258);
-            dataGridViewRecept.TabIndex = 21;
-            // 
             // ReceiptionistManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panelAddRole);
-            Controls.Add(buttonRoleList);
+            Controls.Add(panelAddRecept);
+            Controls.Add(panelUpdateRecept);
+            Controls.Add(buttonReceptList);
             Controls.Add(buttonLogout);
-            Controls.Add(buttonEditRole);
-            Controls.Add(buttonDeleteRole);
-            Controls.Add(buttonAddRole);
+            Controls.Add(buttonEditRecept);
+            Controls.Add(buttonDeleteRecept);
+            Controls.Add(buttonReceptRole);
             Controls.Add(label1);
             Controls.Add(loggedUserEmail);
-            Margin = new Padding(2, 2, 2, 2);
+            Controls.Add(dataGridViewRecept);
+            Margin = new Padding(2);
             Name = "ReceiptionistManagement";
             Text = "ReceiptionistManagement";
-            panelAddRole.ResumeLayout(false);
-            panelAddRole.PerformLayout();
+            Load += ReceiptionistManagement_Load;
+            panelAddRecept.ResumeLayout(false);
+            panelAddRecept.PerformLayout();
             panelUpdateRecept.ResumeLayout(false);
             panelUpdateRecept.PerformLayout();
-            panelReceptList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewRecept).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -350,27 +345,26 @@
         private Button buttonPnlAddCancel;
         private Button buttonPnlCreateUser;
         private TextBox textBoxPnlAddEmail;
-        private TextBox TextBoxPnlAddName;
+        private TextBox textBoxPnlAddName;
         private Label labelPnlAddReceptEmail;
         private Label labelPnlAddReceptName;
         private Label label2;
         private Button buttonPnlEditCancel;
         private Button buttonPnlUpdate;
         private Label label3;
-        private Panel panelAddRole;
+        private Panel panelAddRecept;
         private Panel panelUpdateRecept;
         private TextBox textBoxPnlUpdateEmail;
         private TextBox textBoxPnlUpdateName;
         private Label labelPnlUpdateReceptEmail;
         private Label labelPnlUpdateReceptName;
-        private Button buttonRoleList;
+        private Button buttonReceptList;
         private Button buttonLogout;
-        private Button buttonEditRole;
-        private Button buttonDeleteRole;
-        private Button buttonAddRole;
+        private Button buttonEditRecept;
+        private Button buttonDeleteRecept;
+        private Button buttonReceptRole;
         private Label label1;
         private Label loggedUserEmail;
-        private Panel panelReceptList;
         private DataGridView dataGridViewRecept;
     }
 }

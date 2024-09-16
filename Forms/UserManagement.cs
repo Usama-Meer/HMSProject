@@ -30,10 +30,7 @@ namespace HMSProject.Forms
 
 
 
-        private void CreateUser_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
@@ -154,15 +151,6 @@ namespace HMSProject.Forms
                     MessageBox.Show("No User has been selected!Please select a user.");
                 }
 
-
-
-
-
-
-
-
-
-
             }
         }
 
@@ -183,7 +171,7 @@ namespace HMSProject.Forms
 
         }
 
-        private void UserManagement_Load(object sender, EventArgs e)
+        /*private void UserManagement_Load(object sender, EventArgs e)
         {
             loggedUserEmail.Text = _context.Users.Find(userId).Email;
 
@@ -201,12 +189,39 @@ namespace HMSProject.Forms
             panelUpdateUser.Visible = false;
             buttonDeleteUser.Enabled = true;
             buttonEditUser.Enabled = true;
+        }*/
+
+        private void UserManagement_Load(object sender, EventArgs e)
+        {
+            loggedUserEmail.Text = _context.Users.Find(userId).Email;
+
+            var users = _context.Users
+                .Include(u => u.Role)
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Email,
+                    u.Password,
+                    RoleName = u.Role.RoleName
+                })
+                .ToList();
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = users;
+            dataGridViewUser.DataSource = bindingSource;
+
+            panelAddUser.Visible = false;
+            panelUpdateUser.Visible = false;
+            buttonDeleteUser.Enabled = true;
+            buttonEditUser.Enabled = true;
         }
 
-        
 
-        
 
-        
+
+
+
+
+
     }
 }
